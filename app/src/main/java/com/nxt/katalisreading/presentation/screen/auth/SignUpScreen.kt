@@ -1,21 +1,15 @@
 package com.nxt.katalisreading.presentation.screen.auth
 
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
+import android.R.attr.checked
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,62 +17,65 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.LinkAnnotation
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.nxt.katalisreading.R
 import com.nxt.katalisreading.presentation.component.ButtonComponent
 import com.nxt.katalisreading.presentation.component.EmailField
 import com.nxt.katalisreading.presentation.component.Logo
-import com.nxt.katalisreading.presentation.component.Or
 import com.nxt.katalisreading.presentation.component.PassWordField
 import com.nxt.katalisreading.presentation.navigation.Screen
 import com.nxt.katalisreading.presentation.theme.MyAppTheme
-
-@Composable
+import androidx.activity.compose.BackHandler
 @Preview
-fun SignInPreview() {
+@Composable
+fun SignUpPreview() {
     MyAppTheme {
-        SignInScreen(navController = NavController(LocalContext.current))
+        SignUpScreen(navController = NavController(LocalContext.current))
     }
+
 }
 
 @Composable
-fun SignInScreen(
+fun SignUpScreen(
     navController: NavController,
-    vm: AuthViewModel = viewModel(),
+    vm : AuthViewModel = viewModel()
 ) {
     val state by vm.state.collectAsState()
+
+    BackHandler {
+        navController.navigate(Screen.Login.route) {
+            popUpTo(Screen.SignUp.route) { inclusive = true }
+        }
+    }
+
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(24.dp)
-    ) {
-        val (logo, title, label1, email, label2, password, forgotBtn, signInButton,or, GoogleButton, signUpRow) = createRefs()
+    ){
+        val (logo, title, label1, email, label2, password,label3, comfirmPassword, policy,signUpBtn, signInBack ) = createRefs()
         Logo(
-            modifier = Modifier
-                .constrainAs(logo) {
-                    top.linkTo(parent.top)
-                    start.linkTo(parent.start)
-                }
+            modifier = Modifier.constrainAs(logo) {
+                top.linkTo(parent.top)
+                start.linkTo(parent.start)
+            }
         )
 
+        //Title
         Text(
-            text = "Đăng nhập",
+            text = "Tạo tài khoản",
             style = MaterialTheme.typography.titleLarge.copy(
                 fontWeight = FontWeight.SemiBold,
                 fontSize = 28.sp
@@ -86,22 +83,22 @@ fun SignInScreen(
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .constrainAs(title) {
-                    top.linkTo(logo.bottom, margin = 100.dp)
+                    top.linkTo(logo.bottom, margin = 80.dp)
                     start.linkTo(parent.start)
                 }
         )
 
+        //Email
         Text(
             text = "Email",
-            style = MaterialTheme.typography.labelSmall,
+            style = MaterialTheme.typography.labelMedium,
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .constrainAs(label1) {
-                    top.linkTo(title.bottom, margin = 28.dp)
+                    top.linkTo(title.bottom, margin = 24.dp)
                     start.linkTo(parent.start)
                 }
         )
-
         EmailField(email = state.email,
             onEmailChange = vm::onEmailChange,
             modifier = Modifier
@@ -113,6 +110,7 @@ fun SignInScreen(
                 }
         )
 
+        //Password
         Text(
             text = "Mật khẩu",
             style = MaterialTheme.typography.labelSmall,
@@ -123,11 +121,10 @@ fun SignInScreen(
                     start.linkTo(parent.start)
                 }
         )
-
         PassWordField(
             password = state.password,
             onPasswordChange = vm::onPasswordChange,
-            placeholder = "Nhâp mật khẩu",
+            placeholder = "Nhập mật khẩu",
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(password) {
@@ -137,97 +134,76 @@ fun SignInScreen(
                 }
         )
 
-        //Forgot Password Button
+        //Comfirm Password
         Text(
-            text = "Forgot Password?",
-            style = TextStyle(
-                fontFamily = FontFamily(Font(R.font.inter_regular, FontWeight.Normal)),
-                textDecoration = TextDecoration.Underline,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Normal
-            ),
-            color = MaterialTheme.colorScheme.primary,
+            text = "Nhập lại mật khẩu",
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
-                .constrainAs(forgotBtn) {
-                    top.linkTo(password.bottom, margin = 5.dp)
-                    end.linkTo(parent.end)
+                .constrainAs(label3) {
+                    top.linkTo(password.bottom, margin = 20.dp)
+                    start.linkTo(parent.start)
                 }
-                .clickable(onClick = { /*TODO: Navigate to Forgot Password Screen*/ })
         )
-
-        ButtonComponent(
-            text = "Dăng nhập",
-            onClick = { Unit},
+        PassWordField(
+            password = state.confirm,
+            onPasswordChange = vm::onConfirmPasswordChange,
+            placeholder = "Nhập lại mật khẩu",
             modifier = Modifier
                 .fillMaxWidth()
-                .constrainAs(signInButton) {
-                    top.linkTo(forgotBtn.bottom, margin = 20.dp)
+                .constrainAs(comfirmPassword) {
+                    top.linkTo(label3.bottom, margin = 10.dp)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 }
         )
 
-        Or(modifier = Modifier
-            .fillMaxWidth()
-            .constrainAs(or) {
-                top.linkTo(signInButton.bottom, margin = 20.dp)
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-            }
+        //Term Agreement
+        TermAgreement(
+            checked = state.isCheckTerms,
+            onCheckedChange = vm::onCheckTermsChange,
+            modifier = Modifier
+                .constrainAs(policy) {
+                    top.linkTo(comfirmPassword.bottom, margin = 20.dp)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                }
+
         )
 
-        //Continue with Google Button
-        Button(modifier = Modifier
-            .fillMaxWidth()
-            .constrainAs(GoogleButton) {
-                top.linkTo(or.bottom, margin = 20.dp)
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-            },
-            colors = ButtonColors(
-                containerColor = MaterialTheme.colorScheme.background,
-                contentColor = MaterialTheme.colorScheme.primary,
-                disabledContainerColor = MaterialTheme.colorScheme.background,
-                disabledContentColor = MaterialTheme.colorScheme.primary,
-            ),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
-        shape = RoundedCornerShape(8.dp),
-            onClick = { /*TODO*/ },
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.google),
-                contentDescription = null,
-                modifier = Modifier.padding(end = 8.dp)
-                    .size(24.dp),
-                contentScale = ContentScale.Fit
+        //Sign Up Button
+        ButtonComponent(
+            text = "Đăng ký",
+            onClick = {/*TODO*/},
+            modifier = Modifier
+                .fillMaxWidth()
+                .constrainAs(signUpBtn) {
+                    top.linkTo(policy.bottom, margin = 20.dp)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                },
+        )
 
-            )
-            Text(
-                text = "Đăng nhập với Google",
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onBackground
-            )
-
-        }
-
-        //Don't have an account? Sign up
+        //Sign In Back Button
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .constrainAs(signUpRow) {
+                .constrainAs(signInBack) {
                     bottom.linkTo(parent.bottom, margin = 20.dp)
                     start.linkTo(parent.start)
-                },
+                }
+                .padding(top = 8.dp, bottom = 8.dp),
+
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "Bạn chưa có tài khoản? ",
+                text = "Bạn đã có tài khoản?",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onBackground
             )
             Text(
-                text = "Đăng ký",
+                text = "Đăng nhập",
                 style = MaterialTheme.typography.bodySmall.copy(
                     fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.primary,
@@ -235,10 +211,8 @@ fun SignInScreen(
                 ),
                 modifier = Modifier.padding(start = 4.dp)
                     .clickable(onClick = {
-                        navController.navigate(Screen.SignUp.route){
-                            popUpTo(Screen.Login.route) {
-                                inclusive = true
-                            }
+                        navController.navigate(Screen.Login.route){
+                            popUpTo(Screen.SignUp.route) { inclusive = true }
                         }
                     }),
             )
@@ -246,8 +220,59 @@ fun SignInScreen(
     }
 }
 
+@Composable
+fun TermAgreement(
+    checked: Boolean,
+    onCheckedChange: (Boolean) -> Unit,
+    modifier: Modifier = Modifier
+) {
 
+    val annotatedText = buildAnnotatedString {
+        append("Tôi đồng ý với các ")
 
+        pushStringAnnotation(tag = "TERMS", annotation = "terms")
+        withStyle(
+            style = SpanStyle(
+                color = MaterialTheme.colorScheme.primary,
+                textDecoration = TextDecoration.Underline,
+                fontWeight = FontWeight.Bold
+            )
+        ) {
+            append("điều khoản dịch vụ")
+        }
 
+        append(" và ")
 
+        pushStringAnnotation(tag = "POLICY", annotation = "policy")
+        withStyle(
+            style = SpanStyle(
+                color = MaterialTheme.colorScheme.primary,
+                textDecoration = TextDecoration.Underline,
+                fontWeight = FontWeight.SemiBold
+            )
+        ) {
+            append("chính sách bảo mật")
+        }
 
+        append(" của Katalis.")
+        pop()
+    }
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier
+    ){
+        Checkbox(
+            checked = checked,
+            onCheckedChange = onCheckedChange
+        )
+        ClickableText(
+            text = annotatedText,
+            onClick = {/*TODO*/},
+            style = MaterialTheme.typography.bodySmall.copy(
+                color = MaterialTheme.colorScheme.onBackground,
+                fontWeight = FontWeight.Normal,
+            ),
+        )
+    }
+
+}

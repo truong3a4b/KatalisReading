@@ -76,4 +76,7 @@ dependencies {
     implementation("androidx.compose.foundation:foundation:1.6.8")
 //    implementation("com.google.accompanist:accompanist-pager:0.28.0")
 //    implementation("com.google.accompanist:accompanist-pager-indicators:0.28.0")//Co them indicators
+
+    //Constraint Layout
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 }

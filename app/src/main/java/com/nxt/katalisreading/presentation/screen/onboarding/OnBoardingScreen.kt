@@ -142,7 +142,7 @@ fun ButtonColumn(
     ) {
         //Sign in button
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { signInOnClick() },
             modifier = Modifier
                 .fillMaxWidth(),
             shape = RoundedCornerShape(8.dp)
@@ -155,7 +155,7 @@ fun ButtonColumn(
 
         //Guest button
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { guestOnClick },
             modifier = Modifier
                 .fillMaxWidth(),
             colors = ButtonColors(

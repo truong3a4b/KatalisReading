@@ -15,6 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,6 +31,7 @@ fun PassWordFieldPreview() {
             onPasswordChange = {},
             isError = false,
             errorMessage = "",
+            placeholder = "Nhập mật khẩu",
             modifier = Modifier.background(color = MaterialTheme.colorScheme.background)
         )
     }
@@ -42,6 +44,7 @@ fun PassWordField(
     onPasswordChange: (String) -> Unit,
     isError: Boolean = false,
     errorMessage: String = "",
+    placeholder: String,
     modifier: Modifier = Modifier
 ) {
     var visible by rememberSaveable { mutableStateOf(false) }
@@ -49,14 +52,10 @@ fun PassWordField(
         value = password,
         onValueChange = onPasswordChange,
         isError = isError,
-        supportingText = {
-            if (isError) {
-                Text(errorMessage)
-            }
-        },
+       
         placeholder = {
             Text(
-                text = "Nhập mật khẩu",
+                text = placeholder,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.secondary
             )

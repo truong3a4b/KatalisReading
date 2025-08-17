@@ -23,7 +23,9 @@ class AuthViewModel(private val repo : IAuthRepository = AuthRepo()) : ViewModel
     fun onConfirmPasswordChange(confirmPassword: String) {
         _state.value = _state.value.copy(confirm = confirmPassword)
     }
-
+    fun onCheckTermsChange(isChecked: Boolean) {
+        _state.value = _state.value.copy(isCheckTerms = isChecked)
+    }
 
     //Ham kiem tra email hop le
     private fun validateEmail(email: String): Boolean {

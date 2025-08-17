@@ -58,6 +58,7 @@ val Typography = Typography(
         fontFamily = PrimaryFontFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 14.sp
-    )
+    ),
+
 
 )

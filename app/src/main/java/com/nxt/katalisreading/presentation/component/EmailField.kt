@@ -15,6 +15,7 @@ fun EmailField(
     OutlinedTextField(
         value = email,
         onValueChange = onEmailChange,
+        textStyle = MaterialTheme.typography.bodyMedium,
         placeholder = {
             Text(
                 text = "Nhập email",
