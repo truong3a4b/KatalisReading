@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "718131868985",
+    "firebase_url": "https://katalisreading-default-rtdb.firebaseio.com",
+    "project_id": "katalisreading",
+    "storage_bucket": "katalisreading.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718131868985:android:cc6eeb5e3f9cbe0db4a4e8",
+        "android_client_info": {
+          "package_name": "com.nxt.katalisreading"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718131868985-bnv9csvfo9fnbmiij7rm1iv00lb3q5jh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL3lYcMwHJTrOS9Gc4Ma20NyXAv4_lV0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718131868985-bnv9csvfo9fnbmiij7rm1iv00lb3q5jh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

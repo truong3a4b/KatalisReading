@@ -13,6 +13,7 @@ private val DarkColors = darkColorScheme(
     secondary = Secondary,
     background = BackgroundDark,
     onBackground = TextLight,
+    errorContainer = DialogDark
 )
 
 private val LightColors = lightColorScheme(
@@ -20,7 +21,8 @@ private val LightColors = lightColorScheme(
     onPrimary = TextLight,
     secondary = Secondary,
     background = BackgroundLight,
-    onBackground = TextDark
+    onBackground = TextDark,
+    errorContainer = DialogLight
 )
 
 @Composable

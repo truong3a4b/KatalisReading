@@ -1,5 +1,10 @@
 package com.nxt.katalisreading.presentation.screen.auth
 
+import android.app.Activity
+import android.util.Log.e
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -37,31 +42,64 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.nxt.katalisreading.R
 import com.nxt.katalisreading.presentation.component.ButtonComponent
+import com.nxt.katalisreading.presentation.component.DialogError
 import com.nxt.katalisreading.presentation.component.EmailField
+import com.nxt.katalisreading.presentation.component.Loading
 import com.nxt.katalisreading.presentation.component.Logo
 import com.nxt.katalisreading.presentation.component.Or
 import com.nxt.katalisreading.presentation.component.PassWordField
 import com.nxt.katalisreading.presentation.navigation.Screen
 import com.nxt.katalisreading.presentation.theme.MyAppTheme
 
-@Composable
-@Preview
-fun SignInPreview() {
-    MyAppTheme {
-        SignInScreen(navController = NavController(LocalContext.current))
-    }
-}
+
 
 @Composable
 fun SignInScreen(
     navController: NavController,
-    vm: AuthViewModel = viewModel(),
+    vm: AuthViewModel = hiltViewModel(),
 ) {
     val state by vm.state.collectAsState()
+    val context = LocalContext.current
+
+    //Coroutine launcher for Google Sign-In
+    val launcher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                val idToken = account.idToken
+                if (idToken != null) {
+                    vm.signInWithGoogle(idToken) {
+                        navController.navigate(Screen.Home.route) {
+                            popUpTo(0) {
+                                inclusive = true
+                            }
+                        }
+                    }
+                }
+            }catch (e: ApiException) {
+                Toast.makeText(context, "Google sign in failed: ${e.message}", Toast.LENGTH_LONG).show()
+            }
+
+
+
+    }
+    if(state.showDialog){
+        DialogError(
+            error = state.error,
+            onDismiss = { vm.consumeError() }
+        )
+    }
+
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -104,6 +142,8 @@ fun SignInScreen(
 
         EmailField(email = state.email,
             onEmailChange = vm::onEmailChange,
+            isError = state.emailError,
+            errorMessage = state.emailMes,
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(email) {
@@ -119,7 +159,7 @@ fun SignInScreen(
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .constrainAs(label2) {
-                    top.linkTo(email.bottom, margin = 20.dp)
+                    top.linkTo(email.bottom, margin = 5.dp)
                     start.linkTo(parent.start)
                 }
         )
@@ -127,7 +167,9 @@ fun SignInScreen(
         PassWordField(
             password = state.password,
             onPasswordChange = vm::onPasswordChange,
-            placeholder = "Nhâp mật khẩu",
+            isError = state.passwordError,
+            errorMes = state.passwordMes,
+            placeholder = "Nhập mật khẩu",
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(password) {
@@ -139,7 +181,7 @@ fun SignInScreen(
 
         //Forgot Password Button
         Text(
-            text = "Forgot Password?",
+            text = "Quên mật khẩu?",
             style = TextStyle(
                 fontFamily = FontFamily(Font(R.font.inter_regular, FontWeight.Normal)),
                 textDecoration = TextDecoration.Underline,
@@ -155,9 +197,16 @@ fun SignInScreen(
                 .clickable(onClick = { /*TODO: Navigate to Forgot Password Screen*/ })
         )
 
+
         ButtonComponent(
-            text = "Dăng nhập",
-            onClick = { Unit},
+            text = "Đăng nhập",
+            onClick = { vm.signIn(){
+                navController.navigate(Screen.Home.route) {
+                    popUpTo(0) {
+                        inclusive = true
+                    }
+                }
+            } },
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(signInButton) {
@@ -192,7 +241,12 @@ fun SignInScreen(
             ),
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
         shape = RoundedCornerShape(8.dp),
-            onClick = { /*TODO*/ },
+            onClick = { val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("718131868985-bnv9csvfo9fnbmiij7rm1iv00lb3q5jh.apps.googleusercontent.com")
+                .requestEmail()
+                .build()
+                val client = GoogleSignIn.getClient(context, gso)
+                launcher.launch(client.signInIntent) },
         ) {
             Image(
                 painter = painterResource(id = R.drawable.google),
@@ -243,7 +297,9 @@ fun SignInScreen(
                     }),
             )
         }
+
     }
+    Loading(state.isLoading)
 }
 
 

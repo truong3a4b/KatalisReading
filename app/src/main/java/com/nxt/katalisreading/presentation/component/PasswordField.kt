@@ -29,8 +29,6 @@ fun PassWordFieldPreview() {
         PassWordField(
             password = "",
             onPasswordChange = {},
-            isError = false,
-            errorMessage = "",
             placeholder = "Nhập mật khẩu",
             modifier = Modifier.background(color = MaterialTheme.colorScheme.background)
         )
@@ -43,7 +41,7 @@ fun PassWordField(
     password: String,
     onPasswordChange: (String) -> Unit,
     isError: Boolean = false,
-    errorMessage: String = "",
+    errorMes: String = "",
     placeholder: String,
     modifier: Modifier = Modifier
 ) {
@@ -52,7 +50,15 @@ fun PassWordField(
         value = password,
         onValueChange = onPasswordChange,
         isError = isError,
-       
+        supportingText = {
+            if (isError) {
+                Text(
+                    text = errorMes,
+                    style = MaterialTheme.typography.bodySmall,
+                )
+            }
+        },
+
         placeholder = {
             Text(
                 text = placeholder,

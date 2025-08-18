@@ -1,5 +1,6 @@
 package com.nxt.katalisreading.presentation.theme
 
+import android.app.Dialog
 import androidx.compose.ui.graphics.Color
 
 
@@ -13,3 +14,5 @@ val Green = Color(0xFF118B50)
 val Red  = Color(0xFFE52020)
 val TextDark = Color(0xFF000000)
 val TextLight = Color(0xFFFFFFFF)
+val DialogLight = Color(0xFFF5F5F5)
+val DialogDark = Color(0xFF282828)

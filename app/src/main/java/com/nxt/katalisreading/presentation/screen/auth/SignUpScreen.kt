@@ -37,19 +37,19 @@ import com.nxt.katalisreading.presentation.component.PassWordField
 import com.nxt.katalisreading.presentation.navigation.Screen
 import com.nxt.katalisreading.presentation.theme.MyAppTheme
 import androidx.activity.compose.BackHandler
-@Preview
-@Composable
-fun SignUpPreview() {
-    MyAppTheme {
-        SignUpScreen(navController = NavController(LocalContext.current))
-    }
+import androidx.compose.ui.focus.onFocusChanged
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.nxt.katalisreading.data.repository.AuthRepo
+import com.nxt.katalisreading.presentation.component.DialogError
+import com.nxt.katalisreading.presentation.component.Loading
 
-}
 
 @Composable
 fun SignUpScreen(
     navController: NavController,
-    vm : AuthViewModel = viewModel()
+    vm : AuthViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsState()
 
@@ -57,6 +57,15 @@ fun SignUpScreen(
         navController.navigate(Screen.Login.route) {
             popUpTo(Screen.SignUp.route) { inclusive = true }
         }
+    }
+
+
+
+    if(state.showDialog){
+        DialogError(
+            error = state.error,
+            onDismiss = { vm.consumeError() }
+        )
     }
 
     ConstraintLayout(
@@ -101,6 +110,8 @@ fun SignUpScreen(
         )
         EmailField(email = state.email,
             onEmailChange = vm::onEmailChange,
+            isError = state.emailError,
+            errorMessage = state.emailMes,
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(email) {
@@ -117,21 +128,31 @@ fun SignUpScreen(
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .constrainAs(label2) {
-                    top.linkTo(email.bottom, margin = 20.dp)
+                    top.linkTo(email.bottom, margin = 5.dp)
                     start.linkTo(parent.start)
                 }
         )
         PassWordField(
             password = state.password,
             onPasswordChange = vm::onPasswordChange,
+            isError = state.passwordError,
+            errorMes = state.passwordMes,
             placeholder = "Nhập mật khẩu",
             modifier = Modifier
                 .fillMaxWidth()
+                .onFocusChanged(
+                    onFocusChanged = {
+                        if (!it.isFocused) {
+                            vm.onFocusPasswordLost()
+                        }
+                    }
+                )
                 .constrainAs(password) {
                     top.linkTo(label2.bottom, margin = 10.dp)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 }
+
         )
 
         //Comfirm Password
@@ -141,16 +162,25 @@ fun SignUpScreen(
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .constrainAs(label3) {
-                    top.linkTo(password.bottom, margin = 20.dp)
+                    top.linkTo(password.bottom, margin = 5.dp)
                     start.linkTo(parent.start)
                 }
         )
         PassWordField(
             password = state.confirm,
             onPasswordChange = vm::onConfirmPasswordChange,
+            isError = state.confirmError,
+            errorMes = state.confirmMes,
             placeholder = "Nhập lại mật khẩu",
             modifier = Modifier
                 .fillMaxWidth()
+                .onFocusChanged(
+                    onFocusChanged = {
+                        if (!it.isFocused) {
+                            vm.onFocusConfirmLost()
+                        }
+                    }
+                )
                 .constrainAs(comfirmPassword) {
                     top.linkTo(label3.bottom, margin = 10.dp)
                     start.linkTo(parent.start)
@@ -174,7 +204,14 @@ fun SignUpScreen(
         //Sign Up Button
         ButtonComponent(
             text = "Đăng ký",
-            onClick = {/*TODO*/},
+            onClick = {
+                vm.signUp {
+                    navController.navigate(Screen.Login.route) {
+                        popUpTo(Screen.SignUp.route) { inclusive = true }
+                    }
+                }
+            },
+            enable = state.isCheckTerms,
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(signUpBtn) {
@@ -218,6 +255,8 @@ fun SignUpScreen(
             )
         }
     }
+
+    Loading(state.isLoading)
 }
 
 @Composable

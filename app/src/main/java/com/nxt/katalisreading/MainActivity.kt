@@ -8,7 +8,9 @@ import androidx.navigation.compose.rememberNavController
 import com.nxt.katalisreading.presentation.navigation.AppNavGraph
 import com.nxt.katalisreading.presentation.screen.onboarding.OnBoardingScreen
 import com.nxt.katalisreading.presentation.theme.MyAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()

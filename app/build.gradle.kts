@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -79,4 +81,17 @@ dependencies {
 
     //Constraint Layout
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+
+    //Hilt
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
+    // Hilt cho Navigation Compose
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    //Firebase
+    implementation("com.google.firebase:firebase-auth-ktx:23.0.0")
+    implementation("com.google.firebase:firebase-database-ktx:21.0.0")
+    implementation("com.google.android.gms:play-services-auth:21.1.0")
+
 }
