@@ -11,10 +11,12 @@ interface IAuthRepository{
     suspend fun signUp(
         email: String,
         password: String
-    ): Result<User>
+    ): Result<Unit>
 
     suspend fun logout()
     suspend fun loginWithGoogle(idToken: String): Result<User>
     suspend fun getUserById(uid: String): Result<User>
+    suspend fun updateUser(user: User): Result<User>
+    fun isUserLoggedIn(): Boolean
     fun getCurrentUser(): User?
 }

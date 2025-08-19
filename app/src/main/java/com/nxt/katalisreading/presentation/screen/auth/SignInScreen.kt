@@ -48,14 +48,16 @@ import androidx.navigation.NavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.android.play.integrity.internal.s
 import com.nxt.katalisreading.R
 import com.nxt.katalisreading.presentation.component.ButtonComponent
-import com.nxt.katalisreading.presentation.component.DialogError
+import com.nxt.katalisreading.presentation.component.Dialog
 import com.nxt.katalisreading.presentation.component.EmailField
 import com.nxt.katalisreading.presentation.component.Loading
 import com.nxt.katalisreading.presentation.component.Logo
 import com.nxt.katalisreading.presentation.component.Or
 import com.nxt.katalisreading.presentation.component.PassWordField
+import com.nxt.katalisreading.presentation.component.typeDialog
 import com.nxt.katalisreading.presentation.navigation.Screen
 import com.nxt.katalisreading.presentation.theme.MyAppTheme
 
@@ -78,13 +80,7 @@ fun SignInScreen(
                 val account = task.getResult(ApiException::class.java)
                 val idToken = account.idToken
                 if (idToken != null) {
-                    vm.signInWithGoogle(idToken) {
-                        navController.navigate(Screen.Home.route) {
-                            popUpTo(0) {
-                                inclusive = true
-                            }
-                        }
-                    }
+                    vm.signInWithGoogle(idToken,navController)
                 }
             }catch (e: ApiException) {
                 Toast.makeText(context, "Google sign in failed: ${e.message}", Toast.LENGTH_LONG).show()
@@ -94,9 +90,10 @@ fun SignInScreen(
 
     }
     if(state.showDialog){
-        DialogError(
-            error = state.error,
-            onDismiss = { vm.consumeError() }
+        Dialog(
+            type = if(state.isSuccess) typeDialog.SUCCESS else typeDialog.ERROR,
+            mes = state.dialogMes?:"",
+            onDismiss = {  vm.consumeError() }
         )
     }
 
@@ -200,13 +197,7 @@ fun SignInScreen(
 
         ButtonComponent(
             text = "Đăng nhập",
-            onClick = { vm.signIn(){
-                navController.navigate(Screen.Home.route) {
-                    popUpTo(0) {
-                        inclusive = true
-                    }
-                }
-            } },
+            onClick = { vm.signIn(navController) },
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(signInButton) {
@@ -241,8 +232,9 @@ fun SignInScreen(
             ),
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
         shape = RoundedCornerShape(8.dp),
-            onClick = { val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("718131868985-bnv9csvfo9fnbmiij7rm1iv00lb3q5jh.apps.googleusercontent.com")
+            onClick = {
+                val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(context.getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
                 val client = GoogleSignIn.getClient(context, gso)

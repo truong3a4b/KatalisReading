@@ -3,12 +3,14 @@ package com.nxt.katalisreading.presentation.screen.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavController
 import com.nxt.katalisreading.data.repository.AuthRepo
 import com.nxt.katalisreading.domain.repository.IAuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -102,7 +104,7 @@ class AuthViewModel @Inject constructor(private val repo : IAuthRepository) : Vi
     }
 
     //Goi khi dang nhap
-    fun signIn(onSuccess: () -> Unit) {
+    fun signIn(navController: NavController) {
         val (email, pass) = state.value.let { it.email to it.password }
         if(!checkEmail()) return
         if (pass.isEmpty()) {
@@ -111,16 +113,22 @@ class AuthViewModel @Inject constructor(private val repo : IAuthRepository) : Vi
         }
 
         viewModelScope.launch {
-            _state.value = _state.value.copy(isLoading = true, error = null)
+            _state.value = _state.value.copy(isLoading = true)
             val res = repo.signIn(email, pass)
             _state.value = _state.value.copy(isLoading = false)
-            res.onSuccess { onSuccess() }
-                .onFailure { _state.value = state.value.copy(error = it.message, showDialog = true) }
+            res.onSuccess { user ->
+                if(user.isBeginner) {
+                    navController.navigate("beginner")
+                } else {
+                    navController.navigate("home")
+                }
+            }
+                .onFailure { _state.value = state.value.copy(dialogMes = it.message, showDialog = true, isSuccess = false) }
         }
     }
 
     //Ham goi khi dang ky
-    fun signUp(onSuccess: () -> Unit) {
+    fun signUp() {
         val (email, pass, confirm) = state.value.let { Triple(it.email, it.password, it.confirm) }
 
         if(!checkEmail()) return
@@ -128,30 +136,47 @@ class AuthViewModel @Inject constructor(private val repo : IAuthRepository) : Vi
         if(!checkConfirmPassword()) return
 
         viewModelScope.launch {
-            _state.value = _state.value.copy(isLoading = true, error = null)
+            _state.value = _state.value.copy(isLoading = true)
             val res = repo.signUp(email, pass)
             _state.value = _state.value.copy(isLoading = false)
-            res.onSuccess { onSuccess() }
-                .onFailure { _state.value = _state.value.copy(error = it.message, showDialog = true) }
+            res.onSuccess {
+                _state.update { it.copy(
+                    showDialog = true,
+                    dialogMes = "Đăng ký thành công, vui lòng đăng nhập",
+                    isSuccess = true
+                ) }
+            }
+                .onFailure { _state.value = _state.value.copy(dialogMes = it.message, showDialog = true, isSuccess = false) }
         }
     }
 
     //Dang nhap voi google
-    fun signInWithGoogle(idToken:String,onSuccess: () -> Unit) {
+    fun signInWithGoogle(idToken:String, navController: NavController) {
         viewModelScope.launch {
-            _state.value = _state.value.copy(isLoading = true, error = null)
+            _state.value = _state.value.copy(isLoading = true)
             val res = repo.loginWithGoogle(idToken)
             _state.value = _state.value.copy(isLoading = false)
-            res.onSuccess { onSuccess() }
-                .onFailure { _state.value = state.value.copy(error = it.message, showDialog = true) }
+            res.onSuccess {user ->
+                if(user.isBeginner) {
+                    navController.navigate("beginner")
+                } else {
+                    navController.navigate("home")
+                }
+            }
+                .onFailure { _state.value = state.value.copy(dialogMes = it.message, showDialog = true, isSuccess = false) }
         }
     }
     //Nhan ok trong dialog thong bao loi
     fun consumeError() {
-        _state.value = state.value.copy(error = null, showDialog = false)
+        _state.value = state.value.copy(dialogMes = null, showDialog = false)
     }
 
     fun resetPassword(email: String) {
 
+    }
+
+    //Kiem tra nguoi dung da dang nhap hay chua
+    fun isUserLoggedIn(): Boolean {
+        return repo.isUserLoggedIn()
     }
 }

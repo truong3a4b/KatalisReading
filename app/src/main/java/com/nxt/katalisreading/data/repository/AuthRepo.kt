@@ -52,7 +52,7 @@ class AuthRepo (
     override suspend fun signUp(
         email: String,
         password: String
-    ): Result<User> {
+    ): Result<Unit> {
         return try {
             val authResult = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
             val firebaseUser = authResult.user!!
@@ -68,8 +68,8 @@ class AuthRepo (
             // Lưu vào Realtime DB
             realtimeDb.child("users").child(user.id).setValue(user).await()
 
-            currentUser = user
-            Result.success(user)
+            firebaseAuth.signOut()
+            Result.success(Unit)
         } catch (e: Exception) {
             // Xử lý lỗi nếu có
             when (e) {
@@ -87,7 +87,8 @@ class AuthRepo (
     }
 
     override suspend fun logout() {
-        TODO("Not yet implemented")
+        firebaseAuth.signOut()
+        currentUser = null
     }
 
     override suspend fun loginWithGoogle(idToken: String): Result<User> {
@@ -124,10 +125,37 @@ class AuthRepo (
     }
 
     override suspend fun getUserById(uid: String): Result<User> {
-        TODO("Not yet implemented")
+        return try {
+            val snapshot = realtimeDb.child("users").child(uid).get().await()
+            val user = snapshot.getValue(User::class.java)
+            if (user != null) {
+                currentUser = user
+                Result.success(user)
+            } else {
+                Result.failure(Exception("Không tìm thấy user"))
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 
     override fun getCurrentUser(): User? {
         return currentUser
+
+    }
+
+    override fun isUserLoggedIn(): Boolean {
+        return firebaseAuth.currentUser != null
+    }
+
+    override suspend fun updateUser(user: User): Result<User> {
+        return try {
+            // Cập nhật thông tin người dùng trong Realtime Database
+            realtimeDb.child("users").child(user.id).setValue(user).await()
+            currentUser = user
+            Result.success(user)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 }

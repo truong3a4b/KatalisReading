@@ -42,8 +42,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.nxt.katalisreading.data.repository.AuthRepo
-import com.nxt.katalisreading.presentation.component.DialogError
+import com.nxt.katalisreading.presentation.component.Dialog
+import com.nxt.katalisreading.presentation.component.Dialog
 import com.nxt.katalisreading.presentation.component.Loading
+import com.nxt.katalisreading.presentation.component.typeDialog
 
 
 @Composable
@@ -62,9 +64,13 @@ fun SignUpScreen(
 
 
     if(state.showDialog){
-        DialogError(
-            error = state.error,
-            onDismiss = { vm.consumeError() }
+        Dialog(
+            type = if(state.isSuccess) typeDialog.SUCCESS else typeDialog.ERROR,
+            mes = state.dialogMes?:"",
+            onDismiss = {
+                if(state.isSuccess) navController.navigate(Screen.Login.route)
+                vm.consumeError()
+            }
         )
     }
 
@@ -205,11 +211,7 @@ fun SignUpScreen(
         ButtonComponent(
             text = "Đăng ký",
             onClick = {
-                vm.signUp {
-                    navController.navigate(Screen.Login.route) {
-                        popUpTo(Screen.SignUp.route) { inclusive = true }
-                    }
-                }
+                vm.signUp()
             },
             enable = state.isCheckTerms,
             modifier = Modifier
