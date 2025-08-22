@@ -16,5 +16,6 @@ data class AuthState(
     val passwordMes: String = "",
     val confirmError : Boolean = false,
     val confirmMes: String = "",
-    val isSuccess: Boolean = false
+    val isSuccess: Boolean = false,
+    val isLoggedIn: Boolean? = null
 )

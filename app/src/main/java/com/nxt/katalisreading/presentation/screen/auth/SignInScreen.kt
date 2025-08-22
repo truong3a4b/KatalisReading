@@ -1,7 +1,6 @@
 package com.nxt.katalisreading.presentation.screen.auth
 
-import android.app.Activity
-import android.util.Log.e
+
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -11,14 +10,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.MaterialTheme
@@ -28,27 +24,22 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.play.integrity.internal.s
 import com.nxt.katalisreading.R
 import com.nxt.katalisreading.presentation.component.ButtonComponent
 import com.nxt.katalisreading.presentation.component.Dialog
@@ -59,7 +50,6 @@ import com.nxt.katalisreading.presentation.component.Or
 import com.nxt.katalisreading.presentation.component.PassWordField
 import com.nxt.katalisreading.presentation.component.typeDialog
 import com.nxt.katalisreading.presentation.navigation.Screen
-import com.nxt.katalisreading.presentation.theme.MyAppTheme
 
 
 
@@ -67,6 +57,7 @@ import com.nxt.katalisreading.presentation.theme.MyAppTheme
 fun SignInScreen(
     navController: NavController,
     vm: AuthViewModel = hiltViewModel(),
+    modifier: Modifier = Modifier
 ) {
     val state by vm.state.collectAsState()
     val context = LocalContext.current
@@ -83,7 +74,7 @@ fun SignInScreen(
                     vm.signInWithGoogle(idToken,navController)
                 }
             }catch (e: ApiException) {
-                Toast.makeText(context, "Google sign in failed: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Đăng nhập thất bại: ${e.message}", Toast.LENGTH_SHORT).show()
             }
 
 
@@ -98,7 +89,7 @@ fun SignInScreen(
     }
 
     ConstraintLayout(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(24.dp)

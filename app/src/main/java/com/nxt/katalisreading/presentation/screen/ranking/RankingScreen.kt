@@ -1,4 +1,4 @@
-package com.nxt.katalisreading.presentation.screen.home
+package com.nxt.katalisreading.presentation.screen.ranking
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -7,44 +7,24 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 
 
 @Composable
-fun HomeScreen(
+fun RankingScreen(
     navController: NavController,
-    homeViewModel: HomeViewModel = hiltViewModel(),
     modifier: Modifier = Modifier
 ){
-
-    val state by homeViewModel.state.collectAsState()
-    LaunchedEffect(state.user) {
-        if(state.user != null){
-            if(state.user!!.beginner == true){
-                navController.navigate("beginner"){
-                    popUpTo(0) {
-                        inclusive = true
-                    }
-                }
-            }
-        }
-    }
-
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(24.dp)
     ) {
-        Text(text = "Home", fontSize = 24.sp)
+        Text(text = "ranking", fontSize = 24.sp)
 
     }
-
 }

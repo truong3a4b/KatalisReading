@@ -1,6 +1,8 @@
 package com.nxt.katalisreading.data.repository
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
 import com.nxt.katalisreading.domain.model.User
@@ -35,11 +37,11 @@ class AuthRepo (
             }
         } catch (e: Exception) {
             when(e) {
-                is com.google.firebase.auth.FirebaseAuthInvalidUserException -> {
+                is FirebaseAuthInvalidUserException -> {
                     Result.failure(IllegalArgumentException("Tài khoản hoặc mật khẩu không đúng"))
                 }
 
-                is com.google.firebase.auth.FirebaseAuthInvalidCredentialsException -> {
+                is FirebaseAuthInvalidCredentialsException -> {
                     Result.failure(IllegalArgumentException("Tài khoản hoặc mật khẩu không đúng"))
                 }
 
@@ -62,7 +64,7 @@ class AuthRepo (
                 email = firebaseUser.email ?: "",
                 name = "",
                 avatarUrl = "",
-                isBeginner = true
+                beginner = true
             )
 
             // Lưu vào Realtime DB
@@ -108,7 +110,7 @@ class AuthRepo (
                     email = firebaseUser.email ?: "",
                     name = firebaseUser.displayName ?: "",
                     avatarUrl = firebaseUser.photoUrl?.toString() ?: "",
-                    isBeginner = true
+                    beginner = true
                 )
                 realtimeDb.child("users").child(firebaseUser.uid).setValue(newUser).await()
                 newUser
@@ -124,38 +126,23 @@ class AuthRepo (
         }
     }
 
-    override suspend fun getUserById(uid: String): Result<User> {
-        return try {
-            val snapshot = realtimeDb.child("users").child(uid).get().await()
-            val user = snapshot.getValue(User::class.java)
-            if (user != null) {
-                currentUser = user
-                Result.success(user)
-            } else {
-                Result.failure(Exception("Không tìm thấy user"))
-            }
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
 
-    override fun getCurrentUser(): User? {
-        return currentUser
-
+    override fun getCurrentUserId(): String? {
+        return firebaseAuth.currentUser?.uid
     }
 
     override fun isUserLoggedIn(): Boolean {
         return firebaseAuth.currentUser != null
     }
 
-    override suspend fun updateUser(user: User): Result<User> {
-        return try {
-            // Cập nhật thông tin người dùng trong Realtime Database
-            realtimeDb.child("users").child(user.id).setValue(user).await()
-            currentUser = user
-            Result.success(user)
-        } catch (e: Exception) {
-            Result.failure(e)
+    override fun getCurrentUser(): User? {
+        return currentUser ?: firebaseAuth.currentUser?.let { user ->
+            User(
+                id = user.uid,
+                email = user.email ?: "",
+                name = user.displayName ?: "",
+                avatarUrl = user.photoUrl?.toString() ?: ""
+            )
         }
     }
 }

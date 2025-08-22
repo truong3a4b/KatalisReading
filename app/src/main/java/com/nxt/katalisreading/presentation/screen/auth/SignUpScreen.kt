@@ -51,7 +51,8 @@ import com.nxt.katalisreading.presentation.component.typeDialog
 @Composable
 fun SignUpScreen(
     navController: NavController,
-    vm : AuthViewModel = hiltViewModel()
+    vm : AuthViewModel = hiltViewModel(),
+    modifier: Modifier = Modifier
 ) {
     val state by vm.state.collectAsState()
 
@@ -75,7 +76,7 @@ fun SignUpScreen(
     }
 
     ConstraintLayout(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(24.dp)
