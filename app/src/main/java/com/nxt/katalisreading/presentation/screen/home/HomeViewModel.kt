@@ -2,7 +2,9 @@ package com.nxt.katalisreading.presentation.screen.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.nxt.katalisreading.data.repository.BookRepo
 import com.nxt.katalisreading.domain.repository.IAuthRepository
+import com.nxt.katalisreading.domain.repository.IBookRepo
 import com.nxt.katalisreading.domain.repository.IUserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val authRepo: IAuthRepository,
-    private val userRepo: IUserRepository
+    private val userRepo: IUserRepository,
+    private val bookRepo: IBookRepo
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HomeState())
@@ -36,6 +39,12 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun loadBanner(){
+        viewModelScope.launch {
+            val fetchBanners = bookRepo.getBanner()
+            _state.update { it.copy(banners = fetchBanners) }
+        }
+    }
 
 
 }

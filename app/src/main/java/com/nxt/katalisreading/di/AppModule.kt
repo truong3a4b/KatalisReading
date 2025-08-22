@@ -6,9 +6,11 @@ import com.google.firebase.database.FirebaseDatabase
 import com.nxt.katalisreading.data.remote.CloudinaryApi
 import com.nxt.katalisreading.data.repository.AuthRepo
 import com.nxt.katalisreading.data.repository.BookCategoryRepo
+import com.nxt.katalisreading.data.repository.BookRepo
 import com.nxt.katalisreading.data.repository.UserRepo
 import com.nxt.katalisreading.domain.repository.IAuthRepository
 import com.nxt.katalisreading.domain.repository.IBookCategoryRepo
+import com.nxt.katalisreading.domain.repository.IBookRepo
 import com.nxt.katalisreading.domain.repository.IUserRepository
 import dagger.Binds
 import dagger.Module
@@ -78,5 +80,11 @@ object AppModule {
         realtimeDb: DatabaseReference
     ): IBookCategoryRepo {
         return BookCategoryRepo(realtimeDb)
+    }
+
+    @Provides
+    @Singleton
+    fun provideBookRepo() : IBookRepo{
+        return BookRepo()
     }
 }
