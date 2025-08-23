@@ -3,8 +3,11 @@ package com.nxt.katalisreading.presentation.screen.home
 import android.graphics.drawable.Icon
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,6 +16,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -24,7 +29,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -69,7 +76,6 @@ fun HomeScreen(
         modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(start = 24.dp)
     ) {
         //Top bar
 
@@ -90,6 +96,7 @@ fun TopBar(modifier: Modifier = Modifier){
     ConstraintLayout(
         modifier = Modifier
             .fillMaxWidth()
+            .padding(horizontal = 16.dp)
     ) {
         val (logo, search, notify) =  createRefs()
         Logo(
@@ -141,7 +148,8 @@ fun BannerComponent(
 ){
 
     if(banners.isEmpty()) return
-    val pagerState = rememberPagerState(initialPage = 0){banners.size}
+    val loopBanners = List(3){banners}.flatten()
+    val pagerState = rememberPagerState(initialPage = banners.size){loopBanners.size}
     // Auto-scroll
     var key by remember { mutableStateOf(false) }
     LaunchedEffect(key) {
@@ -149,41 +157,66 @@ fun BannerComponent(
             delay(3000)
             key = !key
         }else{
-            delay(3000)
-            val target = (pagerState.currentPage + 1) % banners.size
-            try{
-                pagerState.animateScrollToPage(page = target, animationSpec = tween(durationMillis = 1000)) //Broken
-            } catch (e : CancellationException){
-                println("Animation bị hủy: ${e.message}")
-            } finally {
+            delay(5000)
+
+
+
+            if(pagerState.currentPage >= banners.size && pagerState.currentPage < banners.size*2){
+                val target = (pagerState.currentPage + 1) % loopBanners.size
+                try{
+                    pagerState.animateScrollToPage(page = target, animationSpec = tween(durationMillis = 1000)) //Broken
+                } catch (e : CancellationException){
+                    println("Animation bị hủy: ${e.message}")
+                } finally {
+                    key = !key
+                }
+            }else{
                 key = !key
             }
-
         }
 
     }
 
+    LaunchedEffect(key) {
+        snapshotFlow { pagerState.isScrollInProgress }
+            .collect { isScrolling ->
+                if (!isScrolling) {
+                    if(pagerState.currentPage < banners.size) pagerState.scrollToPage(pagerState.currentPage + banners.size)
+                    else if( pagerState.currentPage >= banners.size*2) pagerState.scrollToPage(pagerState.currentPage - banners.size)
+                }
+            }
+    }
+
+
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .height(200.dp)
-            .padding(end = 10.dp, top =10.dp)
+            .aspectRatio(16f/9f)
+            .padding(top =10.dp)
     ){
         HorizontalPager(
             state = pagerState,
-            modifier = Modifier.fillMaxSize()
-                .padding(10.dp),
-            pageSize = PageSize.Fill,
+            modifier = Modifier.fillMaxSize(),
             pageSpacing = 20.dp,
 
             ) { page ->
-            AsyncImage(
-                model = banners[page].image,
-                contentDescription = null,
-                contentScale = ContentScale.FillBounds,
+            Card(
                 modifier = Modifier
-                    .fillMaxSize()
-            )
+                    .padding(horizontal = 16.dp)
+            ) {
+                AsyncImage(
+                    model = loopBanners[page].image,
+                    contentDescription = null,
+                    contentScale = ContentScale.FillBounds,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .clip(RoundedCornerShape(16.dp))
+                        .clickable(
+                            onClick = {}
+                        )
+                )
+            }
+
 
         }
     }
