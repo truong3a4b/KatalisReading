@@ -1,17 +1,24 @@
 package com.nxt.katalisreading
 
+import android.app.Activity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -51,7 +58,21 @@ class MainActivity : ComponentActivity() {
             }
 //            Toast.makeText(LocalContext.current, startDestination, Toast.LENGTH_SHORT).show()
 
+
+
             MyAppTheme {
+                val view = LocalView.current
+                val color = MaterialTheme.colorScheme.background
+
+                SideEffect {
+                    val window = (view.context as Activity).window
+                    window.statusBarColor = color.toArgb()
+
+                    val decorView = window.decorView
+                    val insetsController = WindowCompat.getInsetsController(window, decorView)
+                    insetsController.isAppearanceLightStatusBars = color.luminance() > 0.5f
+                }
+
                 Scaffold(
                     bottomBar = {
                         if (currentRoute in bottomBarRoute) {
