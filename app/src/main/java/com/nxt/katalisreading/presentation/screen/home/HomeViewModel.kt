@@ -23,6 +23,10 @@ class HomeViewModel @Inject constructor(
     private val _state = MutableStateFlow(HomeState())
     val state : StateFlow<HomeState> = _state
 
+    private val loadedSection = mutableListOf<Int>()
+    private var currentPage = 0
+    private val pageSize = 4
+
     init {
         viewModelScope.launch {
             val userId = authRepo.getCurrentUserId()
@@ -34,9 +38,8 @@ class HomeViewModel @Inject constructor(
 
                 }
             }
-
-
         }
+        loadSection()
     }
 
     fun loadBanner(){
@@ -46,5 +49,19 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun loadSection(){
+        if(state.value.isLoading) return
+        _state.update { it.copy(isLoading = true) }
+        currentPage++
+        viewModelScope.launch {
+            val nextSections = bookRepo.getHomeSection(currentPage,pageSize)
+            _state.update { it.copy(sections = it.sections + nextSections) }
+            _state.update { it.copy(isLoading = false) }
+        }
+    }
+
+    private fun prefetchNext(){
+
+    }
 
 }
