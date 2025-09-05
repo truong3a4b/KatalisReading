@@ -1,11 +1,15 @@
 package com.nxt.katalisreading.presentation.component
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,55 +18,52 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.nxt.katalisreading.R
 
-
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun Loading(
-    isLoading: Boolean = true,
+fun Reload(
+    isReload: Boolean = false,
     text: String = "",
     showText: Boolean = false,
+    onCLick: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
-    if (!isLoading) return
-    androidx.activity.compose.BackHandler(enabled = true) {
+    if(!isReload) return
+    BackHandler(enabled = true) {
 
     }
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = modifier
-            .background(Color.Black.copy(alpha = 0.35f))
+            .fillMaxSize()
+            .background(Color.White.copy(alpha = 0.35f))
             .consumeAllInput()
     ) {
 
-        CircularProgressIndicator(
-            modifier = Modifier.padding(16.dp),
-            color = MaterialTheme.colorScheme.primary,
-            strokeWidth = 6.dp
-        )
+        IconButton(
+            onClick = onCLick,
+            enabled = true,
+
+        ) {
+            Icon(
+                painter = painterResource(R.drawable.reload),
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.primary,
+                modifier = Modifier
+                    .size(42.dp)
+            )
+        }
         if(showText){
             Text(
                 text = text,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onBackground
             )
-        }
-    }
-
-}
-
-// Extension để nuốt (consume) mọi sự kiện chạm/scroll/drag
-fun Modifier.consumeAllInput(): Modifier = composed {
-    pointerInput(Unit) {
-        awaitPointerEventScope {
-            while (true) {
-                val event = awaitPointerEvent()
-                // consume tất cả thay đổi để không “lọt” xuống dưới
-                event.changes.forEach { it.consume() }
-            }
         }
     }
 }

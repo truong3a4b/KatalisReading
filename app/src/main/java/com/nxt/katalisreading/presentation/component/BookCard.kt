@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,8 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -23,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -121,6 +119,7 @@ fun BookCardColumn(
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier
                 .padding(top = 4.dp)
+                .height(30.dp)
         )
         val genre = book.genre.take(2).joinToString(", ")
         Text(
@@ -158,11 +157,12 @@ fun BookCardRow(
                 .aspectRatio(3f / 4f)
                 .clip(RoundedCornerShape(4.dp)),
             contentScale = ContentScale.FillBounds,
-            )
+        )
         //Spacer(modifier.width(10.dp))
         Column(
             verticalArrangement = Arrangement.Center,
-            modifier = Modifier.fillMaxHeight()
+            modifier = Modifier
+                .fillMaxHeight()
                 .padding(start = 10.dp)
         ) {
             Text(
@@ -184,21 +184,10 @@ fun BookCardRow(
                 modifier = Modifier
                     .padding(top = 4.dp)
             )
-            val view = book.view.toString() + " Views"
-            Text(
-                text = view,
-                style = MaterialTheme.typography.bodySmall.copy(fontSize = 10.sp),
-                color = MaterialTheme.colorScheme.primary,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                modifier = Modifier
-                    .padding(top = 4.dp)
-            )
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ){
+            if (showView) {
+                val view = book.view.toString() + " Views"
                 Text(
-                    text = ""+book.rating,
+                    text = view,
                     style = MaterialTheme.typography.bodySmall.copy(fontSize = 10.sp),
                     color = MaterialTheme.colorScheme.primary,
                     maxLines = 1,
@@ -206,40 +195,34 @@ fun BookCardRow(
                     modifier = Modifier
                         .padding(top = 4.dp)
                 )
-                Icon(
-                    painter = painterResource(R.drawable.baseline_star_24),
-                    contentDescription = null,
-                    modifier = Modifier.size(16.dp)
-                        .padding(start = 5.dp)
-                )
+            }
+            if (showRating) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                            .padding(top = 4.dp)
+                ) {
+                    Text(
+                        text = "" + book.rating,
+                        style = MaterialTheme.typography.bodySmall.copy(fontSize = 10.sp),
+                        color = MaterialTheme.colorScheme.primary,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                        modifier = Modifier
+                            .padding(top = 4.dp)
+                    )
+                    Icon(
+                        painter = painterResource(R.drawable.baseline_star_24),
+                        contentDescription = null,
+                        tint = Color(0xFFFFB74D),
+                        modifier = Modifier
+                            .size(16.dp)
+                            .padding(start = 5.dp),
+                    )
+                }
             }
         }
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun BookCardPreview() {
-    MyAppTheme {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-        ) {
-            BookCardRow(
-                book = Book(
-                    image = "",
-                    name = "Eighty six Vol 9 : Valkyrie Has Landed",
-                    genre = listOf("Kiếm hiệp", "Lãng mạn"),
-                    type = "Light Novel"
-                ),
-                showRating = true,
-                showView = true,
-                modifier = Modifier
-                    .height(150.dp)
-                    .aspectRatio(5f/3f)
-            )
-        }
 
-    }
-}

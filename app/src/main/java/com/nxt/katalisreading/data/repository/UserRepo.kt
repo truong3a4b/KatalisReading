@@ -1,7 +1,10 @@
 package com.nxt.katalisreading.data.repository
 
 import com.google.firebase.database.DatabaseReference
+import com.nxt.katalisreading.data.mapper.Mapper.toDto
+import com.nxt.katalisreading.data.model.toDomain
 import com.nxt.katalisreading.data.remote.CloudinaryApi
+import com.nxt.katalisreading.data.remote.FirebaseService
 import com.nxt.katalisreading.domain.model.User
 import com.nxt.katalisreading.domain.repository.IUserRepository
 import kotlinx.coroutines.tasks.await
@@ -13,36 +16,30 @@ import java.io.File
 import javax.inject.Inject
 
 class UserRepo @Inject constructor(
-    private val cloudinaryApi: CloudinaryApi,
-    private val realtimeDb: DatabaseReference,
+    private val firebaseService: FirebaseService,
+    private val cloudinaryApi: CloudinaryApi
 ) : IUserRepository {
 
     private var currentUser: User? = null
 
     override suspend fun getUserById(id: String): Result<User> {
 
-        return try {
-            val snapshot = realtimeDb.child("users").child(id).get().await()
-            val user = snapshot.getValue(User::class.java)
-            if (user != null) {
-                currentUser = user
-                Result.success(user)
-            } else {
-                Result.failure(Exception("Không tìm thấy user"))
+        return firebaseService.getUserById(id)
+            .mapCatching { userDto ->
+                userDto.toDomain().also {
+                    currentUser = it
+                }
             }
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
 
     }
 
     override suspend fun updateUser(user: User): Result<Unit> {
-        return try {
-            realtimeDb.child("users").child(user.id).setValue(user).await()
+        val result = firebaseService.updateUser(user.toDto())
+        return if (result.isSuccess) {
             currentUser = user
             Result.success(Unit)
-        }catch (e: Exception) {
-            Result.failure(e)
+        } else {
+            Result.failure(result.exceptionOrNull()!!)
         }
     }
 

@@ -4,6 +4,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.nxt.katalisreading.data.remote.CloudinaryApi
+import com.nxt.katalisreading.data.remote.FirebaseService
 import com.nxt.katalisreading.data.repository.AuthRepo
 import com.nxt.katalisreading.data.repository.BookCategoryRepo
 import com.nxt.katalisreading.data.repository.BookRepo
@@ -48,11 +49,18 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideAuthRepository(
+    fun provideFirebaseService(
         firebaseAuth: FirebaseAuth,
         realtimeDb: DatabaseReference
+    ): FirebaseService{
+        return FirebaseService(firebaseAuth, realtimeDb)
+    }
+    @Provides
+    @Singleton
+    fun provideAuthRepository(
+        firebaseService: FirebaseService
     ): IAuthRepository {
-        return AuthRepo(firebaseAuth, realtimeDb)
+        return AuthRepo(firebaseService)
     }
 
     @Provides
@@ -68,23 +76,25 @@ object AppModule {
     @Provides
     @Singleton
     fun provideUserRepository(
+        firebaseService: FirebaseService,
         cloudinaryApi: CloudinaryApi,
-        realtimeDb: DatabaseReference
     ): IUserRepository {
-        return UserRepo(cloudinaryApi, realtimeDb)
+        return UserRepo(firebaseService, cloudinaryApi)
     }
 
     @Provides
     @Singleton
     fun provideBookCategoryRepo(
-        realtimeDb: DatabaseReference
+        firebaseService: FirebaseService
     ): IBookCategoryRepo {
-        return BookCategoryRepo(realtimeDb)
+        return BookCategoryRepo(firebaseService)
     }
 
     @Provides
     @Singleton
-    fun provideBookRepo() : IBookRepo{
-        return BookRepo()
+    fun provideBookRepo(
+        firebaseService: FirebaseService
+    ) : IBookRepo{
+        return BookRepo(firebaseService)
     }
 }

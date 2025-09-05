@@ -1,24 +1,36 @@
 package com.nxt.katalisreading.data.repository
 
-import com.google.firebase.database.DatabaseReference
+import com.nxt.katalisreading.data.mapper.Mapper.toDomain
+import com.nxt.katalisreading.data.remote.FirebaseService
 import com.nxt.katalisreading.domain.model.Genre
 import com.nxt.katalisreading.domain.model.Type
 import com.nxt.katalisreading.domain.repository.IBookCategoryRepo
-import kotlinx.coroutines.tasks.await
 
 
-class BookCategoryRepo (
-    private val realtimeDb: DatabaseReference
+class BookCategoryRepo(
+    private val firebaseService: FirebaseService
 ) : IBookCategoryRepo {
+    private val genreCatche: Map<String, Genre> = emptyMap()
+
     override suspend fun getTypes(): List<Type> {
-        val snapshot = realtimeDb.child("type").get().await()
-        return snapshot.children.mapNotNull { it.getValue(Type::class.java) }
+        return firebaseService.getTypes().map {
+            it.toDomain()
+        }
+
     }
 
     override suspend fun getGenres(): List<Genre> {
-        val snapshot = realtimeDb.child("genre").get().await()
-        return snapshot.children.mapNotNull { it.getValue(Genre::class.java) }
+        val genres = firebaseService.getGenres().map { it.toDomain() }
+        for (genre in genres) {
+            genreCatche.plus(genre.id to genre)
+        }
+        return genres
     }
 
 
+
+
+
+
 }
+

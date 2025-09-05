@@ -1,16 +1,23 @@
 package com.nxt.katalisreading.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import androidx.navigation.navigation
 import com.nxt.katalisreading.presentation.screen.auth.SignInScreen
 import com.nxt.katalisreading.presentation.screen.home.HomeScreen
 import com.nxt.katalisreading.presentation.screen.onboarding.OnBoardingScreen
 import com.nxt.katalisreading.presentation.screen.auth.SignUpScreen
 import com.nxt.katalisreading.presentation.screen.beginner.BeginnerScreen
+import com.nxt.katalisreading.presentation.screen.booklist.BookListScreen
 import com.nxt.katalisreading.presentation.screen.folder.FolderScreen
+import com.nxt.katalisreading.presentation.screen.home.HomeViewModel
 import com.nxt.katalisreading.presentation.screen.profile.ProfileScreen
 import com.nxt.katalisreading.presentation.screen.ranking.RankingScreen
 
@@ -25,9 +32,28 @@ fun AppNavGraph(
         navController = navController,
         startDestination = startDestination
     ){
-        composable(Screen.Home.route){
-            HomeScreen(navController, modifier = modifier)
+        navigation(startDestination = "home", route = "home_graph"){
+            composable("home"){ backStackEntry ->
+                val parentEntry = remember(backStackEntry) {
+                    navController.getBackStackEntry("home_graph")
+                }
+                val homeViewModel = hiltViewModel<HomeViewModel>(parentEntry)
+                HomeScreen(navController, homeViewModel =homeViewModel, modifier = modifier)
+            }
+            composable(
+                "booklist/{sectionIndex}",
+                arguments = listOf(navArgument("sectionIndex"){type = NavType.StringType})
+            ){backStackEntry ->
+                val sectionIndex = backStackEntry.arguments?.getString("sectionIndex") ?: "0"
+                val parentEntry = remember(backStackEntry) {
+                    navController.getBackStackEntry("home_graph")
+                }
+                val homeViewModel = hiltViewModel<HomeViewModel>(parentEntry)
+
+                BookListScreen(navController,homeViewModel = homeViewModel, sectionIndex =  sectionIndex.toInt())
+            }
         }
+
         composable(Screen.Ranking.route){
             RankingScreen(navController, modifier = modifier)
         }

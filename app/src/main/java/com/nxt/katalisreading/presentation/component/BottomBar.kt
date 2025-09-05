@@ -25,6 +25,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.nxt.katalisreading.R
+import com.nxt.katalisreading.presentation.navigation.Screen
 import com.nxt.katalisreading.presentation.theme.MyAppTheme
 
 
@@ -59,11 +60,11 @@ fun BottomBar(
                         onReselect(bottomMenuItem.route)
                     }else{
                         navController.navigate(bottomMenuItem.route){
-                            popUpTo(navController.graph.findStartDestination().id){
-                                saveState = true
+                            popUpTo(navController.graph.findStartDestination().id){ //Dùng để pop (xóa) các destination khỏi backstack cho đến route chỉ định.
+                                saveState = true //cho phép lưu lại trạng thái của các destination đó
                             }
-                            launchSingleTop = true
-                            restoreState = true
+                            launchSingleTop = true //không push thêm một bản mới, mà chỉ tái sử dụng bản hiện tại trong stack
+                            restoreState = true //khôi phục lại trạng thái cũ
                         }
                     }
                 },
@@ -93,6 +94,7 @@ fun BottomBar(
     }
 }
 
+//kiem tra xem có phải screen đang hiển thị ko
 private fun NavDestination?.isInHierarchy(route: String): Boolean{
     return this?.hierarchy?.any { it.route == route} == true
 }
@@ -113,7 +115,7 @@ fun prepareBottomMenu(): List<BottomMenuItem> {
             label = "Trang chủ",
             icon = R.drawable.home,
             iconSelected = R.drawable.home_selected,
-            route = "home",
+            route = Screen.Home.route,
         )
     )
     bottomMenuItemList.add(
@@ -121,7 +123,7 @@ fun prepareBottomMenu(): List<BottomMenuItem> {
             label = "Xếp hạng",
             icon =  R.drawable.ranking,
             iconSelected = R.drawable.ranking_selected,
-            route = "ranking",
+            route = Screen.Ranking.route,
         )
     )
     bottomMenuItemList.add(
@@ -129,7 +131,7 @@ fun prepareBottomMenu(): List<BottomMenuItem> {
             label = "Của tôi",
             icon = R.drawable.folder,
             iconSelected = R.drawable.folder_selected,
-            route = "folder",
+            route = Screen.Folder.route,
         )
     )
     bottomMenuItemList.add(
@@ -137,7 +139,7 @@ fun prepareBottomMenu(): List<BottomMenuItem> {
             label = "Hồ sơ",
             icon = R.drawable.user,
             iconSelected = R.drawable.user_selected,
-            route = "profile",
+            route = Screen.Profile.route,
         )
     )
 

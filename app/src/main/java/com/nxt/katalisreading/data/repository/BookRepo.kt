@@ -1,49 +1,49 @@
 package com.nxt.katalisreading.data.repository
 
+import com.nxt.katalisreading.data.mapper.Mapper.toDomain
+import com.nxt.katalisreading.data.mapper.Mapper.toDto
+import com.nxt.katalisreading.data.model.BookDto
+import com.nxt.katalisreading.data.remote.FirebaseService
 import com.nxt.katalisreading.domain.model.Banner
 import com.nxt.katalisreading.domain.model.Book
-import com.nxt.katalisreading.domain.model.BookFetchData
-import com.nxt.katalisreading.domain.model.BookSection
-import com.nxt.katalisreading.domain.model.HomeSectionFetchData
+import com.nxt.katalisreading.domain.model.GenreCustom
+import com.nxt.katalisreading.domain.model.GenreRate
 import com.nxt.katalisreading.domain.repository.IBookRepo
-import kotlinx.coroutines.delay
 
-class BookRepo : IBookRepo {
+class BookRepo(
+    private val firebaseService: FirebaseService
+) : IBookRepo {
     override suspend fun getBanner(): List<Banner> {
-        delay(500)
-        val result = mutableListOf<Banner>()
-        result.add(
-            Banner(
-                "1",
-                "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755877644/banner1_a0wubo.jpg"
-            )
-        )
-        result.add(
-            Banner(
-                "2",
-                "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755877645/banner2_jhbprm.jpg"
-            )
-        )
-        result.add(
-            Banner(
-                "3",
-                "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755877645/banner3_wxvzrl.jpg"
-            )
-        )
-
-        return result
+        return firebaseService.getBanners().map { it.toDomain() }
     }
 
 
-    override suspend fun getBookBySection(sectionId:String, quantity: Int, indexStart: Int): List<Book> {
-        delay(500)
-        val result = BookFetchData.listData
-        return result
+
+    override suspend fun getBooksByListGenre(typeId: String, listGenre: List<GenreRate>, quantity: Int, indexStart: Int): List<Book>{
+        val listBook : MutableList<BookDto> = mutableListOf()
+
+        for(genreRate in listGenre){
+            val numBook = (genreRate.rate * quantity).toInt()
+            listBook += firebaseService.getBooksByGenreId(typeId, genreRate.genreId, numBook, (indexStart * genreRate.rate).toInt())
+        }
+        return listBook.map { it.toDomain(firebaseService.getGenreMap()) }
     }
 
-    override suspend fun getHomeSection(quantity: Int, indexStart: Int): List<BookSection> {
-        delay(2000)
-        val result = HomeSectionFetchData.dataList
-        return result
+    override suspend fun getHotBooks(typeId : String, quantity: Int, indexStart: Int) : List<Book>{
+        return firebaseService.getHotBooks(quantity = quantity, indexStart = indexStart).map { it.toDomain(firebaseService.getGenreMap()) }
     }
+    override suspend fun getNewBooks(typeId : String, quantity: Int, indexStart: Int) : List<Book>{
+        return firebaseService.getNewBooks(quantity = quantity, indexStart = indexStart).map { it.toDomain(firebaseService.getGenreMap()) }
+
+    }
+
+    override suspend fun getBooksByGenreId(
+        typeId: String,
+        genreId: String,
+        quantity: Int,
+        indexStart: Int
+    ): List<Book> {
+        return firebaseService.getBooksByGenreId(typeId = typeId, genreId = genreId,quantity= quantity,indexStart = indexStart).map { it.toDomain(firebaseService.getGenreMap()) }
+    }
+
 }

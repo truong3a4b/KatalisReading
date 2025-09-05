@@ -122,7 +122,7 @@ class BeginnerViewModel @Inject constructor(
             user = user!!.copy(
                 name = state.value.name,
                 avatarUrl = state.value.imageUrl,
-                beginner = false,
+                isBeginner = false,
                 favoriteBooks = state.value.typeChooseList,
                 favoriteGenres = state.value.genreChooseList
             )

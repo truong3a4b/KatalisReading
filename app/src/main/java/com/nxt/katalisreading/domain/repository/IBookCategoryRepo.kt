@@ -6,4 +6,5 @@ import com.nxt.katalisreading.domain.model.Type
 interface IBookCategoryRepo {
     suspend fun getTypes(): List<Type>
     suspend fun getGenres(): List<Genre>
+
 }

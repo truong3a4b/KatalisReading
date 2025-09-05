@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.nxt.katalisreading.domain.repository.IAuthRepository
+import com.nxt.katalisreading.presentation.navigation.Screen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -135,7 +136,7 @@ class AuthViewModel @Inject constructor(private val repo: IAuthRepository) : Vie
             val res = repo.signIn(email, pass)
             _state.value = _state.value.copy(isLoading = false)
             res.onSuccess { user ->
-                navController.navigate("home") {
+                navController.navigate(Screen.Home.route) {
                     popUpTo("0") { inclusive = true }
                 }
 

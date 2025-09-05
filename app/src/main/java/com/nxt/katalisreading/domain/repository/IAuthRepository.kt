@@ -13,9 +13,8 @@ interface IAuthRepository{
         password: String
     ): Result<Unit>
 
-    suspend fun logout()
+    suspend fun signOut()
     suspend fun loginWithGoogle(idToken: String): Result<User>
     fun isUserLoggedIn(): Boolean
     fun getCurrentUserId(): String?
-    fun getCurrentUser(): User?
 }

@@ -1,13 +1,12 @@
 package com.nxt.katalisreading.presentation.screen.home
 
-import android.graphics.drawable.Icon
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
@@ -18,12 +17,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -34,11 +30,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -46,19 +44,22 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.nxt.katalisreading.R
 import com.nxt.katalisreading.domain.model.Banner
-import com.nxt.katalisreading.domain.model.BookFetchData
-import com.nxt.katalisreading.domain.model.BookSection
-import com.nxt.katalisreading.domain.model.HomeSectionFetchData
+import com.nxt.katalisreading.domain.model.NewBookSection
+import com.nxt.katalisreading.domain.model.Section
 import com.nxt.katalisreading.presentation.component.BookCardColumn
+import com.nxt.katalisreading.presentation.component.BookCardRow
+import com.nxt.katalisreading.presentation.component.Loading
 import com.nxt.katalisreading.presentation.component.Logo
+import com.nxt.katalisreading.presentation.component.Reload
+import com.nxt.katalisreading.presentation.component.ShimmerBox
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 
@@ -68,15 +69,27 @@ fun HomeScreen(
     navController: NavController,
     homeViewModel: HomeViewModel = hiltViewModel(),
     modifier: Modifier = Modifier
-){
+) {
 
     val state by homeViewModel.state.collectAsState()
     val listState = rememberLazyListState()
 
+    //an hien top bar
+    var previousScrollOffset by remember { mutableStateOf(0) }
+    val isTopBarVisible by remember {
+        derivedStateOf {
+            val currentOffset = listState.firstVisibleItemScrollOffset
+            val isScrollingDown = currentOffset < previousScrollOffset
+            previousScrollOffset = currentOffset
+            isScrollingDown || listState.firstVisibleItemIndex == 0
+        }
+    }
+
+
     LaunchedEffect(state.user) {
-        if(state.user != null){
-            if(state.user!!.beginner == true){
-                navController.navigate("beginner"){
+        if (state.user != null) {
+            if (state.user!!.isBeginner) {
+                navController.navigate("beginner") {
                     popUpTo(0) {
                         inclusive = true
                     }
@@ -84,51 +97,75 @@ fun HomeScreen(
             }
         }
     }
-
-    LaunchedEffect(state.banners) {
+    LaunchedEffect(Unit) {
+        homeViewModel.loadDataInit()
         homeViewModel.loadBanner()
+        homeViewModel.loadBooksInSection()
     }
 
-    LaunchedEffect(listState) {
-        snapshotFlow { listState.layoutInfo.visibleItemsInfo }
-            .collect { visibleItems ->
-                val lastVisible = visibleItems.lastOrNull()?.index ?: 0
-                if (lastVisible >= state.sections.size - 3 && state.sections.size < 20) {
-                    homeViewModel.loadSection()
-                }
-            }
-    }
 
-    LazyColumn(
-        state = listState,
+//    LaunchedEffect(listState) {
+//        snapshotFlow { listState.layoutInfo.visibleItemsInfo }
+//            .collect { visibleItems ->
+//                val lastVisible = visibleItems.lastOrNull()?.index ?: 0
+//                if (lastVisible <= state.sectionLoadingIndex + 1 && state.sectionLoadingIndex <= 10) {
+//                    val number : Pair<Int,Int> = listOf(Pair(6,3), Pair(10,6), Pair(20,1)).randomByWeight { it.second }
+//                    homeViewModel.loadBooksBySection(0, number.second)
+//                }
+//            }
+//    }
+
+    Column(
         modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+
     ) {
         //Top bar
-
-        item {
+        AnimatedVisibility(visible = isTopBarVisible) {
             TopBar()
         }
-        item {
-            BannerComponent(state.banners)
-        }
-        items (state.sections){item ->
-            HomeSection(item)
+
+        LazyColumn(
+            state = listState,
+        ) {
+
+            item {
+                BannerComponent(isLoading = state.bannerLoading, banners = state.banners)
+            }
+            items(state.sections, key = { it.title }) { item ->
+                HomeSection(bookSection = item, navController)
+            }
+            item {
+                Spacer(modifier = Modifier.height(30.dp))
+            }
         }
     }
 
+    Loading(
+        isLoading = state.isLoading,
+        text = "Đang tải",
+        showText = true,
+        modifier = Modifier.fillMaxSize()
+    )
+    Reload(
+        isReload = state.isReload,
+        text = "Tải lại",
+        showText = true,
+        onCLick = {},
+        modifier = Modifier.fillMaxSize()
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun TopBar(modifier: Modifier = Modifier){
+fun TopBar(modifier: Modifier = Modifier) {
     ConstraintLayout(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
     ) {
-        val (logo, search, notify) =  createRefs()
+        val (logo, search, notify) = createRefs()
         Logo(
             modifier = Modifier.constrainAs(logo) {
                 top.linkTo(parent.top)
@@ -139,7 +176,7 @@ fun TopBar(modifier: Modifier = Modifier){
 
         IconButton(
             onClick = {},
-            modifier = Modifier.constrainAs(search){
+            modifier = Modifier.constrainAs(search) {
                 top.linkTo(parent.top)
                 bottom.linkTo(parent.bottom)
                 end.linkTo(notify.start, margin = 4.dp)
@@ -154,7 +191,7 @@ fun TopBar(modifier: Modifier = Modifier){
 
         IconButton(
             onClick = {},
-            modifier = Modifier.constrainAs(notify){
+            modifier = Modifier.constrainAs(notify) {
                 top.linkTo(parent.top)
                 bottom.linkTo(parent.bottom)
                 end.linkTo(parent.end)
@@ -173,99 +210,119 @@ fun TopBar(modifier: Modifier = Modifier){
 @Preview(showBackground = true)
 @Composable
 fun BannerComponent(
-    banners:List<Banner> = listOf(Banner()),
+    banners: List<Banner> = emptyList(),
+    isLoading: Boolean = false,
     modifier: Modifier = Modifier
-){
+) {
 
-    if(banners.isEmpty()) return
-    val loopBanners = List(3){banners}.flatten()
-    val pagerState = rememberPagerState(initialPage = banners.size){loopBanners.size}
-    // Auto-scroll
-    var key by remember { mutableStateOf(false) }
-    LaunchedEffect(key) {
-        if(pagerState.isScrollInProgress) {
-            delay(3000)
-            key = !key
-        }else{
-            delay(5000)
+    if (isLoading) {
+        ShimmerBox(
+            modifier = modifier
+                .fillMaxWidth()
+                .aspectRatio(16f / 9f)
+                .padding(top = 10.dp)
+        )
+    } else {
+        val loopBanners = List(3) { banners }.flatten()
+        val pagerState = rememberPagerState(initialPage = banners.size) { loopBanners.size }
+        // Auto-scroll
+        var key by remember { mutableStateOf(false) }
+        LaunchedEffect(key) {
+            if (pagerState.isScrollInProgress) {
+                delay(3000)
+                key = !key
+            } else {
+                delay(5000)
 
 
 
-            if(pagerState.currentPage >= banners.size && pagerState.currentPage < banners.size*2){
-                val target = (pagerState.currentPage + 1) % loopBanners.size
-                try{
-                    pagerState.animateScrollToPage(page = target, animationSpec = tween(durationMillis = 1000)) //Broken
-                } catch (e : CancellationException){
-                    println("Animation bị hủy: ${e.message}")
-                } finally {
+                if (pagerState.currentPage >= banners.size && pagerState.currentPage < banners.size * 2) {
+                    val target = (pagerState.currentPage + 1) % loopBanners.size
+                    try {
+                        pagerState.animateScrollToPage(
+                            page = target,
+                            animationSpec = tween(durationMillis = 1000)
+                        ) //Broken
+                    } catch (e: CancellationException) {
+                        println("Animation bị hủy: ${e.message}")
+                    } finally {
+                        key = !key
+                    }
+                } else {
                     key = !key
                 }
-            }else{
-                key = !key
             }
+
         }
 
-    }
-
-    LaunchedEffect(key) {
-        snapshotFlow { pagerState.isScrollInProgress }
-            .collect { isScrolling ->
-                if (!isScrolling) {
-                    if(pagerState.currentPage < banners.size) pagerState.scrollToPage(pagerState.currentPage + banners.size)
-                    else if( pagerState.currentPage >= banners.size*2) pagerState.scrollToPage(pagerState.currentPage - banners.size)
-                }
-            }
-    }
-
-
-    Box(
-        modifier = modifier
-            .fillMaxWidth()
-            .aspectRatio(16f/9f)
-            .padding(top =10.dp)
-    ){
-        HorizontalPager(
-            state = pagerState,
-            modifier = Modifier.fillMaxSize(),
-            pageSpacing = 20.dp,
-
-            ) { page ->
-            Card(
-                modifier = Modifier
-                    .padding(horizontal = 16.dp)
-            ) {
-                AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current)
-                        .data(loopBanners[page].image)
-                        .crossfade(true)
-                        .placeholder(R.drawable.placeholder1)
-                        .error(R.drawable.placeholder1)
-                        .build(),
-                    contentDescription = null,
-                    contentScale = ContentScale.FillBounds,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .clip(RoundedCornerShape(16.dp))
-                        .clickable(
-                            onClick = {}
+        LaunchedEffect(key) {
+            snapshotFlow { pagerState.isScrollInProgress }
+                .collect { isScrolling ->
+                    if (!isScrolling) {
+                        if (pagerState.currentPage < banners.size) pagerState.scrollToPage(
+                            pagerState.currentPage + banners.size
                         )
-                )
+                        else if (pagerState.currentPage >= banners.size * 2) pagerState.scrollToPage(
+                            pagerState.currentPage - banners.size
+                        )
+                    }
+                }
+        }
+
+
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .aspectRatio(16f / 9f)
+                .padding(top = 10.dp)
+        ) {
+            HorizontalPager(
+                state = pagerState,
+                modifier = Modifier.fillMaxSize(),
+                pageSpacing = 20.dp,
+
+                ) { page ->
+                Card(
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp)
+                ) {
+                    AsyncImage(
+                        model = ImageRequest.Builder(LocalContext.current)
+                            .data(loopBanners[page].image)
+                            .crossfade(true)
+                            .placeholder(R.drawable.placeholder1)
+                            .error(R.drawable.placeholder1)
+                            .build(),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .clip(RoundedCornerShape(16.dp))
+                            .clickable(
+                                onClick = {}
+                            )
+                    )
+                }
+
+
             }
-
-
         }
     }
-
 }
 
 @Composable
-fun HomeSection(bookSection: BookSection){
+fun HomeSection(
+    bookSection: Section,
+    navController: NavController
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 24.dp)
-    ){
-        Row(){
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Text(
                 text = bookSection.title,
                 style = MaterialTheme.typography.titleSmall,
@@ -273,7 +330,7 @@ fun HomeSection(bookSection: BookSection){
                 modifier = Modifier
                     .padding(start = 16.dp)
             )
-            Spacer( modifier = Modifier.weight(1f))
+            Spacer(modifier = Modifier.weight(1f))
             Text(
                 text = "Thêm >",
                 style = MaterialTheme.typography.bodySmall,
@@ -281,23 +338,51 @@ fun HomeSection(bookSection: BookSection){
                 modifier = Modifier
                     .padding(10.dp)
                     .clickable(
-                        onClick = {}
+                        onClick = {
+                            navController.navigate("booklist/${bookSection.id}") {
+                                popUpTo(navController.graph.findStartDestination().id){
+                                    saveState = true
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
                     )
             )
         }
+        if (bookSection.listBook.isEmpty()) {
+            Row(
+                verticalAlignment = Alignment.Top,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(160.dp)
+            ) {
+                repeat(3) { j ->
+                    ShimmerBox(
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(start = 16.dp)
+                            .aspectRatio(3f / 4f)
+                    )
+                }
+                Spacer(modifier = Modifier.width(16.dp))
 
-        if(bookSection.listBook.size == 6){
+            }
+        } else if ( bookSection.type == 2 && bookSection.listBook.size >= 6) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 12.dp)
             ) {
-                repeat(2){i ->
-                    Row(modifier = Modifier
-                        .fillMaxWidth()
-                    ){
-                        repeat(3){j ->
-                            val item = bookSection.listBook.get(3*i+j)
+                repeat(2) { i ->
+                    Row(
+                        verticalAlignment = Alignment.Top,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(220.dp)
+                    ) {
+                        repeat(3) { j ->
+                            val item = bookSection.listBook.get(3 * i + j)
                             BookCardColumn(
                                 book = item,
                                 showType = false,
@@ -312,13 +397,43 @@ fun HomeSection(bookSection: BookSection){
                     }
                 }
             }
-        } else if(bookSection.listBook.size >= 15){
+        } else if (bookSection.type == 1 && bookSection.listBook.size >= 15) {
+            val chunkedBooks = bookSection.listBook.chunked(3)
 
-        }
-        else {
             LazyRow(
+                verticalAlignment = Alignment.Top,
                 modifier = Modifier
                     .fillMaxWidth()
+                    .height(330.dp)
+                    .padding(top = 12.dp)
+            ) {
+                items(chunkedBooks) { bookColumn ->
+                    Column(
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                        modifier = Modifier.padding(start = 16.dp)
+                    ) {
+                        bookColumn.forEach { book ->
+                            BookCardRow(
+                                book,
+                                showRating = true,
+                                showView = true,
+                                modifier = Modifier
+                                    .height(100.dp)
+                                    .aspectRatio(3f / 1f)
+                            )
+                        }
+                    }
+                }
+                item {
+                    Spacer(modifier = Modifier.width(16.dp))
+                }
+            }
+        } else {
+            LazyRow(
+                verticalAlignment = Alignment.Top,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(250.dp)
                     .padding(top = 12.dp)
             ) {
                 items(bookSection.listBook) { item ->
