@@ -60,7 +60,6 @@ fun BookListScreen(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp)
         ) {
             IconButton(
                 onClick = {
@@ -76,7 +75,8 @@ fun BookListScreen(
 
             Text(
                 text = section.title,
-                style = MaterialTheme.typography.titleSmall
+                style = MaterialTheme.typography.titleSmall,
+                color = MaterialTheme.colorScheme.onBackground
             )
         }
 
@@ -95,6 +95,7 @@ fun BookListScreen(
                 }
         }
         LazyColumn(
+            state = listState,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxWidth()

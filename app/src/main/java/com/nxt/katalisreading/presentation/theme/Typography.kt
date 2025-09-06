@@ -56,7 +56,7 @@ val Typography = Typography(
     ),
     labelSmall = TextStyle(
         fontFamily = PrimaryFontFamily,
-        fontWeight = FontWeight.SemiBold,
+        fontWeight = FontWeight.Light,
         fontSize = 14.sp
     ),
 

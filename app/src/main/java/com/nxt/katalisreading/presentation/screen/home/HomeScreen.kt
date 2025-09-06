@@ -128,6 +128,7 @@ fun HomeScreen(
 
         LazyColumn(
             state = listState,
+            modifier = Modifier.fillMaxWidth()
         ) {
 
             item {
