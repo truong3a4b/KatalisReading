@@ -175,6 +175,7 @@ fun TopBar(modifier: Modifier = Modifier) {
             }
         )
 
+        //Icon search
         IconButton(
             onClick = {},
             modifier = Modifier.constrainAs(search) {
@@ -190,6 +191,7 @@ fun TopBar(modifier: Modifier = Modifier) {
             )
         }
 
+        //Icon notify
         IconButton(
             onClick = {},
             modifier = Modifier.constrainAs(notify) {
@@ -391,6 +393,7 @@ fun HomeSection(
                                 modifier = Modifier
                                     .weight(1f)
                                     .padding(start = 16.dp)
+                                    .clickable(onClick = {navController.navigate("book_detail/1")})
                             )
                         }
                         Spacer(modifier = Modifier.width(16.dp))
@@ -421,6 +424,7 @@ fun HomeSection(
                                 modifier = Modifier
                                     .height(100.dp)
                                     .aspectRatio(3f / 1f)
+                                    .clickable(onClick = {navController.navigate("book_detail/1")})
                             )
                         }
                     }
@@ -446,6 +450,7 @@ fun HomeSection(
                         modifier = Modifier
                             .width(150.dp)
                             .padding(start = 16.dp)
+                            .clickable(onClick = {navController.navigate("book_detail/1")})
                     )
                 }
                 item { Spacer(modifier = Modifier.width(16.dp)) }

@@ -15,6 +15,7 @@ import com.nxt.katalisreading.presentation.screen.home.HomeScreen
 import com.nxt.katalisreading.presentation.screen.onboarding.OnBoardingScreen
 import com.nxt.katalisreading.presentation.screen.auth.SignUpScreen
 import com.nxt.katalisreading.presentation.screen.beginner.BeginnerScreen
+import com.nxt.katalisreading.presentation.screen.bookdetail.BookDetailScreen
 import com.nxt.katalisreading.presentation.screen.booklist.BookListScreen
 import com.nxt.katalisreading.presentation.screen.folder.FolderScreen
 import com.nxt.katalisreading.presentation.screen.home.HomeViewModel
@@ -51,6 +52,12 @@ fun AppNavGraph(
                 val homeViewModel = hiltViewModel<HomeViewModel>(parentEntry)
 
                 BookListScreen(navController,homeViewModel = homeViewModel, sectionIndex =  sectionIndex.toInt())
+            }
+            composable(
+                "book_detail/{bookId}",
+                arguments = listOf(navArgument("bookId"){type = NavType.StringType})
+            ){backStackEntry ->
+                BookDetailScreen()
             }
         }
 

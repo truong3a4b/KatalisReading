@@ -119,7 +119,6 @@ fun BookCardColumn(
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier
                 .padding(top = 4.dp)
-                .height(30.dp)
         )
         val genre = book.genre.take(2).joinToString(", ")
         Text(

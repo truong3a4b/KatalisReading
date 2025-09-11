@@ -10,6 +10,7 @@ sealed class Screen(val route:String){
     object Ranking : Screen("ranking")
     object Folder : Screen("folder")
     object Profile : Screen("profile")
+    object BookDetail: Screen("book_detail")
 }
 
 
