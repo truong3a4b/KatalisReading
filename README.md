@@ -31,8 +31,7 @@ Người dùng có thể:
 ---
 
 ## 📷 Demo
-
-![z7005855107300_ada3758176f0173870f26734743778fc](https://github.com/user-attachments/assets/3e414de9-0d2d-44c2-a8e9-2663753231ed)
+<img width="300" height="900" alt="anh1" src="https://github.com/user-attachments/assets/3e414de9-0d2d-44c2-a8e9-2663753231ed" />
 
 ![z7005855104269_84655411aa5a65f1c0d4a28edd5b1da6](https://github.com/user-attachments/assets/bddfbd5c-b260-491d-97e9-8906cae424ed)
 
