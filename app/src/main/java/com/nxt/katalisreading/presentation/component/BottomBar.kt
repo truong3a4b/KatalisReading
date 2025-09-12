@@ -136,7 +136,7 @@ fun prepareBottomMenu(): List<BottomMenuItem> {
     )
     bottomMenuItemList.add(
         BottomMenuItem(
-            label = "Hồ sơ",
+            label = "Tài khoản",
             icon = R.drawable.user,
             iconSelected = R.drawable.user_selected,
             route = Screen.Profile.route,
