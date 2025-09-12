@@ -32,5 +32,6 @@ Người dùng có thể:
 
 ## 📷 Demo
 
-## Reference
+## References
 - Tham khảo giao diện từ figma: figma.com/design/ox4jOSCumfbKvaTC1r4XzL/Katalis---Mobile-app-for-reading-novel---manga--Community-?t=LXgMczN7Du37dqhH-0
+- Truyện được crawl từ trang: https://truyenfull.vision/
