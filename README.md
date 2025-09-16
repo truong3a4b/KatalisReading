@@ -14,7 +14,7 @@ Người dùng có thể:
 - **Ngôn ngữ:** Kotlin  
 - **UI:** Jetpack Compose  
 - **Quản lý state:** ViewModel, StateFlow  
-- **Cơ sở dữ liệu:** Firebase Firestore (chứa danh sách sách, review, user)  
+- **Cơ sở dữ liệu:** Firebase Realtime (chứa danh sách sách, review, user)  
 - **Authentication:** Firebase Auth (đăng nhập, đăng ký)  
 - **Khác:** Coil (load ảnh), Retrofit (API)  
 
