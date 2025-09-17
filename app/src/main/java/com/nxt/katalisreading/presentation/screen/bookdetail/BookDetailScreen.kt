@@ -36,6 +36,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -66,6 +67,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
@@ -82,7 +84,13 @@ import java.util.Collections.emptyList
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun BookDetailScreen(
+    navController: NavController,
+    bookId: String,
+    bookDetailViewModel: BookDetailViewModel = hiltViewModel(),
+    modifier: Modifier = Modifier,
 ) {
+    val state = bookDetailViewModel.state.collectAsState().value
+
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -98,21 +106,17 @@ fun BookDetailScreen(
                 //Top bar
                 TopBarBookDetail(modifier = Modifier.padding(top = 10.dp, bottom = 16.dp))
 
-
-                val tabs = listOf("Giới thiệu", "Chương", "Đánh giá")
-                var selectedTab by remember { mutableStateOf(2) }
-                var input by remember { mutableStateOf("") }
                 val keyboardController = LocalSoftwareKeyboardController.current
                 val focusManager = LocalFocusManager.current
-                val totalChapters = 1000
-                val pageSize = 20
-                val totalPages = (totalChapters + pageSize - 1) / pageSize // làm tròn
-                var currentPage by remember { mutableStateOf(1) }
-                val pages = getPageList(currentPage, totalPages, 3)
-                val start = (currentPage - 1) * pageSize + 1
-                val end = minOf(currentPage * pageSize, totalChapters)
-                var currentChapters by remember { mutableStateOf((start..end).toList()) }
-                currentChapters = (start..end).toList()
+//                val totalChapters = 1000
+//                val pageSize = 20
+//                val totalPages = (totalChapters + pageSize - 1) / pageSize // làm tròn
+//                var currentPage by remember { mutableStateOf(1) }
+//                val pages = getPageList(currentPage, totalPages, 3)
+//                val start = (currentPage - 1) * pageSize + 1
+//                val end = minOf(currentPage * pageSize, totalChapters)
+//                var currentChapters by remember { mutableStateOf((start..end).toList()) }
+//                currentChapters = (start..end).toList()
 
                 val listReview = listOf(Review("1","1","","Nguyen Xuan Truong", 5, "Hay lắm"),
                     Review("1","1","","Nguyen Ho Duong Thang", 1, "Truyện rác"),
@@ -152,15 +156,15 @@ fun BookDetailScreen(
                             modifier = Modifier
                                 .fillMaxWidth()
                         ) {
-                            tabs.forEachIndexed { index, tab ->
+                            state.tabs.forEachIndexed { index, tab ->
                                 Box(
                                     modifier = Modifier
-                                        .clickable { selectedTab = index }
+                                        .clickable { bookDetailViewModel.updateSelectedTab(index) }
                                         .drawBehind {
                                             val strokeWidth = 2.dp.toPx()
                                             val y = size.height - strokeWidth / 2
                                             drawLine(
-                                                color = if (selectedTab == index) Color(0xFF948979) else Color.Transparent,
+                                                color = if (state.selectedTab == index) Color(0xFF948979) else Color.Transparent,
                                                 start = Offset(0f, y),
                                                 end = Offset(size.width, y),
                                                 strokeWidth = strokeWidth
@@ -172,15 +176,15 @@ fun BookDetailScreen(
                                     Text(
                                         text = tab,
                                         style = MaterialTheme.typography.bodySmall,
-                                        color = if (selectedTab == index) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onBackground,
-                                        fontWeight = if (selectedTab == index) FontWeight.Bold else FontWeight.Normal
+                                        color = if (state.selectedTab == index) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onBackground,
+                                        fontWeight = if (state.selectedTab == index) FontWeight.Bold else FontWeight.Normal
                                     )
                                 }
                             }
                         }
                     }
 
-                    when (selectedTab) {
+                    when (state.selectedTab) {
                         0 -> item {
                             Description(
                                 modifier = Modifier
@@ -204,9 +208,9 @@ fun BookDetailScreen(
                                             .padding(end = 8.dp)
                                     )
                                     BasicTextField(
-                                        value = input,
+                                        value = state.chapterSearch,
                                         onValueChange = {
-                                            input = it.filter { ch -> ch.isDigit() }
+                                            bookDetailViewModel.onSearchChange(it.filter { ch -> ch.isDigit() })
                                         }, // chỉ cho nhập số
                                         singleLine = true,
                                         textStyle = MaterialTheme.typography.bodySmall.copy(
@@ -217,7 +221,7 @@ fun BookDetailScreen(
                                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Done),
                                         keyboardActions = KeyboardActions(
                                             onDone = {
-                                                if (input.isNotEmpty() && input.toInt() <= totalChapters) {
+                                                if (state.chapterSearch.isNotEmpty() && state.chapterSearch.toInt() <= state.totalChapter) {
                                                     currentChapters = listOf(input.toInt())
                                                 }else{
                                                     currentChapters = (start..end).toList()
@@ -824,12 +828,4 @@ fun getPageList(current: Int, total: Int, maxVisible: Int = 5): List<Int?> {
     }
 
     return pages
-}
-
-@Preview(showBackground = true)
-@Composable
-fun BookDetailPreview() {
-    MyAppTheme {
-        BookDetailScreen()
-    }
 }

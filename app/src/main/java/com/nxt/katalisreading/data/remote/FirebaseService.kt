@@ -8,9 +8,12 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
 import com.nxt.katalisreading.data.model.BannerDto
 import com.nxt.katalisreading.data.model.BookDto
+import com.nxt.katalisreading.data.model.ChapterDto
 import com.nxt.katalisreading.data.model.GenreDto
+import com.nxt.katalisreading.data.model.ReviewDto
 import com.nxt.katalisreading.data.model.TypeDto
 import com.nxt.katalisreading.data.model.UserDto
+import com.nxt.katalisreading.domain.model.Review
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
@@ -269,4 +272,38 @@ class FirebaseService @Inject constructor(
             return emptyList()
         }
     }
+
+    suspend fun getBookById(bookId: String): BookDto? {
+        return try {
+            val snapshot = realtimeDb.child("books").child(bookId).get().await()
+            val book = snapshot.getValue(BookDto::class.java)
+            book
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+   suspend fun getReviewsOfBook(bookId: String, quantity: Int, indexStart: Int): List<ReviewDto> {
+        return try {
+            val snapshot = realtimeDb.child("reviews").child(bookId).startAt(indexStart.toDouble())
+                .limitToFirst(quantity).get().await()
+            val listReview = snapshot.children.mapNotNull { it.getValue(ReviewDto::class.java) }
+            listReview
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+    suspend fun getChaptersOfBook(bookId: String, quantity: Int, indexStart: Int): List<ChapterDto> {
+        return try {
+            val snapshot = realtimeDb.child("chapters").child(bookId).startAt(indexStart.toDouble())
+                .limitToFirst(quantity).get().await()
+            val listChapter = snapshot.children.mapNotNull { it.getValue(ChapterDto::class.java) }
+            listChapter
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+
 }

@@ -12,4 +12,5 @@ interface IBookRepo {
     suspend fun getHotBooks(typeId : String, quantity: Int, indexStart: Int) : List<Book>
     suspend fun getNewBooks(typeId : String, quantity: Int, indexStart: Int) : List<Book>
     suspend fun getBooksByGenreId(typeId : String, genreId : String, quantity: Int, indexStart: Int) : List<Book>
+    suspend fun getBookDetailById(bookId: String) : Result<Book>
 }

@@ -26,15 +26,14 @@ class BookRepo(
             val numBook = (genreRate.rate * quantity).toInt()
             listBook += firebaseService.getBooksByGenreId(typeId, genreRate.genreId, numBook, (indexStart * genreRate.rate).toInt())
         }
-        return listBook.map { it.toDomain(firebaseService.getGenreMap()) }
+        return listBook.map { it.toDomain() }
     }
 
     override suspend fun getHotBooks(typeId : String, quantity: Int, indexStart: Int) : List<Book>{
-        return firebaseService.getHotBooks(quantity = quantity, indexStart = indexStart).map { it.toDomain(firebaseService.getGenreMap()) }
+        return firebaseService.getHotBooks(quantity = quantity, indexStart = indexStart).map { it.toDomain() }
     }
     override suspend fun getNewBooks(typeId : String, quantity: Int, indexStart: Int) : List<Book>{
-        return firebaseService.getNewBooks(quantity = quantity, indexStart = indexStart).map { it.toDomain(firebaseService.getGenreMap()) }
-
+        return firebaseService.getNewBooks(quantity = quantity, indexStart = indexStart).map { it.toDomain() }
     }
 
     override suspend fun getBooksByGenreId(
@@ -43,7 +42,20 @@ class BookRepo(
         quantity: Int,
         indexStart: Int
     ): List<Book> {
-        return firebaseService.getBooksByGenreId(typeId = typeId, genreId = genreId,quantity= quantity,indexStart = indexStart).map { it.toDomain(firebaseService.getGenreMap()) }
+        return firebaseService.getBooksByGenreId(typeId = typeId, genreId = genreId,quantity= quantity,indexStart = indexStart).map { it.toDomain() }
     }
 
+    override suspend fun getBookDetailById(bookId: String): Result<Book> {
+        val bookDto = firebaseService.getBookById(bookId)
+        if(bookDto == null){
+            return Result.failure(Exception("Lỗi"))
+        }
+        val book = bookDto.toDomain()
+        val reviews = firebaseService.getReviewsOfBook(bookId, 5, 0).map { it.toDomain() }
+        book.listReview = reviews
+
+        val chapter = firebaseService.getChaptersOfBook(bookId, 20, 0).map { it.toDomain() }
+        book.listChapter = chapter
+        return Result.success(book)
+    }
 }

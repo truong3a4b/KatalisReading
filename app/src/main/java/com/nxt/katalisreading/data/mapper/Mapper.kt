@@ -2,15 +2,19 @@ package com.nxt.katalisreading.data.mapper
 
 import com.nxt.katalisreading.data.model.BannerDto
 import com.nxt.katalisreading.data.model.BookDto
+import com.nxt.katalisreading.data.model.ChapterDto
 import com.nxt.katalisreading.data.model.GenreCustomDto
 import com.nxt.katalisreading.data.model.GenreDto
+import com.nxt.katalisreading.data.model.ReviewDto
 import com.nxt.katalisreading.data.model.TypeDto
 import com.nxt.katalisreading.data.model.UserDto
 import com.nxt.katalisreading.data.repository.BookCategoryRepo
 import com.nxt.katalisreading.domain.model.Banner
 import com.nxt.katalisreading.domain.model.Book
+import com.nxt.katalisreading.domain.model.Chapter
 import com.nxt.katalisreading.domain.model.GenreCustom
 import com.nxt.katalisreading.domain.model.Genre
+import com.nxt.katalisreading.domain.model.Review
 import com.nxt.katalisreading.domain.model.Type
 import com.nxt.katalisreading.domain.model.User
 import com.nxt.katalisreading.domain.repository.IBookCategoryRepo
@@ -54,16 +58,21 @@ object Mapper{
 
 
 
-    fun BookDto.toDomain(genreMap: Map<String, GenreDto>): Book = Book(
+    fun BookDto.toDomain(): Book = Book(
         id = this.id,
         name = this.name,
         image = this.image,
         type = this.type,
-        genre = this.genre.mapNotNull { genreMap[it]?.name },
+        genre = this.genre,
+        author = this.author,
+        description = this.author,
         rating = this.rating.toFloat(),
+        ratingCount = this.ratingCount,
         view = this.view,
         releaseTime = this.releaseTime,
-        latestTimeUpdate = this.latestTimeUpdate
+        latestTimeUpdate = this.latestTimeUpdate,
+        listReview = emptyList(),
+        listChapter = emptyList()
     )
 
     fun Book.toDto(): BookDto = BookDto(
@@ -72,6 +81,8 @@ object Mapper{
         image = this.image,
         type = this.type,
         genre = this.genre,
+        author = this.author,
+        description = this.description,
         rating = this.rating.toString(),
         view = this.view,
         releaseTime = this.releaseTime,
@@ -86,8 +97,37 @@ object Mapper{
         id = this.id,
         image = this.image
     )
+    fun ReviewDto.toDomain(): Review = Review(
+        id = this.id,
+        userId = this.userId,
+        avatar = this.avatar,
+        userName = this.userName,
+        star = this.star,
+        comment = this.comment,
+    )
+    fun Review.toDto(): ReviewDto = ReviewDto(
+        id = this.id,
+        userId = this.userId,
+        avatar = this.avatar,
+        userName = this.userName,
+        star = this.star,
+        comment = this.comment,
+    )
 
+    fun ChapterDto.toDomain(): Chapter = Chapter(
+        id = this.id,
+        name = this.name,
+        timeUpdate = this.timeUpdate,
+        view = this.view,
+        content = null,
+    )
 
+    fun Chapter.toDto(): ChapterDto = ChapterDto(
+        id = this.id,
+        name = this.name,
+        timeUpdate = this.timeUpdate,
+        view = this.view,
+    )
 
 
 }

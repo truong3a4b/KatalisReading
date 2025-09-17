@@ -1,6 +1,5 @@
 package com.nxt.katalisreading.data.model
 
-import androidx.room.Update
 
 data class BookDto(
     val id: String = "",
@@ -8,7 +7,10 @@ data class BookDto(
     val image: String = "",
     val type: String = "",
     val genre: List<String> = emptyList(),
+    val author: String = "",
+    val description: String = "",
     val rating: String = "0",
+    var ratingCount: List<Int> = listOf(0, 0, 0, 0, 0),
     val view: Int = 0,
     val releaseTime: Long = 0,
     val latestTimeUpdate: Long = 0,
