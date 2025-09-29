@@ -1,0 +1,2176 @@
+{
+  "genre": {
+    "1": {
+      "id": "1",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588754/action_tty5xc.png",
+      "name": "Action",
+      "hide": false,
+      "listBook": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20"
+      ]
+    },
+    "2": {
+      "id": "2",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588790/romance_bfdyly.png",
+      "name": "Romance",
+      "hide": false,
+      "listBook": [
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ]
+    },
+    "3": {
+      "id": "3",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588788/fantasy_vxmuaq.png",
+      "name": "Fantasy",
+      "hide": false,
+      "listBook": [
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60"
+      ]
+    },
+    "4": {
+      "id": "4",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588789/horror_fgaqb3.png",
+      "name": "Horror",
+      "hide": false,
+      "listBook": [
+        "61",
+        "62",
+        "63",
+        "64",
+        "65",
+        "66",
+        "67",
+        "68",
+        "69",
+        "70",
+        "71",
+        "72",
+        "73",
+        "74",
+        "75",
+        "76",
+        "77",
+        "78",
+        "79",
+        "80"
+      ]
+    },
+    "5": {
+      "id": "5",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588754/comedy_ig636a.png",
+      "name": "Comedy",
+      "hide": false,
+      "listBook": [
+        "81",
+        "82",
+        "83",
+        "84",
+        "85",
+        "86",
+        "87",
+        "88",
+        "89",
+        "90",
+        "91",
+        "92",
+        "93",
+        "94",
+        "95",
+        "96",
+        "97",
+        "98",
+        "99",
+        "100"
+      ]
+    },
+    "6": {
+      "id": "6",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588791/slice_life_cub3np.png",
+      "name": "Slice of Life",
+      "hide": false,
+      "listBook": [
+        "101",
+        "102",
+        "103",
+        "104",
+        "105",
+        "106",
+        "107",
+        "108",
+        "109",
+        "110",
+        "111",
+        "112",
+        "113",
+        "114",
+        "115",
+        "116",
+        "117",
+        "118",
+        "119",
+        "120"
+      ]
+    },
+    "7": {
+      "id": "7",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588790/mystery_friorn.png",
+      "name": "Mystery",
+      "hide": false,
+      "listBook": [
+        "121",
+        "122",
+        "123",
+        "124",
+        "125",
+        "126",
+        "127",
+        "128",
+        "129",
+        "130",
+        "131",
+        "132",
+        "133",
+        "134",
+        "135",
+        "136",
+        "137",
+        "138",
+        "139",
+        "140"
+      ]
+    }
+  },
+  "type": [
+    null,
+    {
+      "id": "1",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588156/novel_w6zzqk.png",
+      "name": "Novel"
+    },
+    {
+      "id": "2",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588218/commic_cexor4.png",
+      "name": "Comic"
+    },
+    {
+      "id": "3",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588305/manga_rnuemq.png",
+      "name": "Manga"
+    },
+    {
+      "id": "4",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755588789/light_novel_bjqcom.png",
+      "name": "Light Novel"
+    }
+  ],
+  "users": {
+    "2ZQyEStUe6RvTekXoA9djRmi3yS2": {
+      "avatarUrl": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755699343/avatar_default_hdmpcg.png",
+      "beginner": false,
+      "email": "truong3@gmail.com",
+      "id": "2ZQyEStUe6RvTekXoA9djRmi3yS2",
+      "name": "Wibu12345"
+    },
+    "3FyClsU9kFbEOZNjw7TP0EG7hSY2": {
+      "avatarUrl": "",
+      "beginner": true,
+      "email": "truong@gmail.com",
+      "id": "3FyClsU9kFbEOZNjw7TP0EG7hSY2",
+      "name": ""
+    },
+    "3x9ktGvfDlZtMmZcDoKoe5tPqoe2": {
+      "avatarUrl": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755699343/avatar_default_hdmpcg.png",
+      "beginner": false,
+      "email": "truong6@gmail.com",
+      "favoriteBooks": [
+        "1"
+      ],
+      "favoriteGenres": [
+        "2"
+      ],
+      "id": "3x9ktGvfDlZtMmZcDoKoe5tPqoe2",
+      "name": "Wibu12345"
+    },
+    "DOmRJQzCYCVMShFkxwZmiMDltez1": {
+      "avatarUrl": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755699343/avatar_default_hdmpcg.png",
+      "beginner": false,
+      "email": "quynhtrang230708@gmail.com",
+      "favoriteBooks": [
+        "1"
+      ],
+      "favoriteGenres": [
+        "2"
+      ],
+      "id": "DOmRJQzCYCVMShFkxwZmiMDltez1",
+      "name": "Trangtoof"
+    },
+    "HdC9vZLdSdTxtV3kXmtLdt1dzq43": {
+      "avatarUrl": "",
+      "beginner": true,
+      "email": "truong2@gmail.com",
+      "id": "HdC9vZLdSdTxtV3kXmtLdt1dzq43",
+      "name": ""
+    },
+    "b2LtyhkCWeMwYF0gcb06HzGsqnz1": {
+      "avatarUrl": "",
+      "beginner": true,
+      "email": "truong5@gmail.com",
+      "id": "b2LtyhkCWeMwYF0gcb06HzGsqnz1",
+      "name": ""
+    },
+    "kOIm82RaT9RSMPgNDr9NcxtpAUj2": {
+      "avatarUrl": "http://res.cloudinary.com/dtcdt4dcw/image/upload/v1755782017/jztz96gq0ymhqxtel4mw.jpg",
+      "beginner": false,
+      "email": "truongnguyen31032004@gmail.com",
+      "id": "kOIm82RaT9RSMPgNDr9NcxtpAUj2",
+      "name": "Wibu12345"
+    },
+    "osMKCAC6KebcSo7tpmT6tQPxYoH2": {
+      "avatarUrl": "",
+      "beginner": true,
+      "email": "truong7@gmail.com",
+      "id": "osMKCAC6KebcSo7tpmT6tQPxYoH2",
+      "name": ""
+    },
+    "oz35UpjPSfghMAr7fOCRSCf2mlC3": {
+      "avatarUrl": "",
+      "beginner": true,
+      "email": "truong8@gmail.com",
+      "id": "oz35UpjPSfghMAr7fOCRSCf2mlC3",
+      "name": ""
+    },
+    "sK9pj9J4zTQgqQW9jfWPv1rizZj1": {
+      "avatarUrl": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1755699343/avatar_default_hdmpcg.png",
+      "beginner": false,
+      "email": "truong4@gmail.com",
+      "favoriteBooks": [
+        "4"
+      ],
+      "favoriteGenres": [
+        "6",
+        "3"
+      ],
+      "id": "sK9pj9J4zTQgqQW9jfWPv1rizZj1",
+      "name": "Wibu12345"
+    }
+  },
+  "banner": [
+    {
+      "id": "1",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1756858487/banner4_uhncqi.jpg"
+    },
+    {
+      "id": "2",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1756858487/banner6_gga5hp.jpg"
+    },
+    {
+      "id": "3",
+      "image": "https://res.cloudinary.com/dtcdt4dcw/image/upload/v1756858486/banner5_myypgh.jpg"
+    }
+  ],
+  "books":{
+    "1": {
+      "id": "1",
+      "name": "Bất Độ - Phù Tang Tri Ngã",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNZcW9BaMvSXxyOOTflvtRVLbvoa7k5zTEWnqwfX0O4lLORrSRjOg-WnkAWBxW_iviYjkdvbpzaL7Cexx-b79BLS26epW0OojtmL3_PB_-54xeKk-vJc-BTAVNVDTLue0DuBvShOef71kr9b8W7XfO3=w215-h322-s-no-gm?authuser=4",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "7.4",
+      "view": 8640,
+      "releaseTime": 1756951138012,
+      "latestTimeUpdate": 1756951138012
+    },
+    "2": {
+      "id": "2",
+      "name": "Thanh Xuân Tiên Vương Mang Thai Cáo Con Của Tôi",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNECPbRui-fnfwwT3cswOCbJPHWqUjHYVVZF4De9nWE3vITHgfcTkVyKhISqAF_VHWt7ZGcPOfyQ7oHVw_uRpABl7Whw6RO0Y3jrnmq6FLe_VJluaMGXzLJD6XfJaeWmRAQelfIDtK88YCY5ypV9qAS=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "8.4",
+      "view": 9413,
+      "releaseTime": 1756951139585,
+      "latestTimeUpdate": 1756951139585
+    },
+    "3": {
+      "id": "3",
+      "name": "Trọng Sinh Nữ Thầy Phong Thuỷ - Thiên Sơn Trà Tân Quán",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOYedgmskLvlbrhzQaGjthhUe-C5SHgJQYBoU6JKbhqNCLetx9zstErpsc6Tp9Hc3pTzIn85LM1QRWIq40VfFBWNYcd5bOViK0J4reUlyuLs-Tw6KJf_nVIXboGnhi_q_EqHlU0k52FYvrxUlwtrprv=w215-h322-s-no-gm?authuser=4",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "8.6",
+      "view": 6244,
+      "releaseTime": 1756951140735,
+      "latestTimeUpdate": 1756951140735
+    },
+    "4": {
+      "id": "4",
+      "name": "Chàng Chất Phác, Nàng Xấu Xí",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMG1w0cJUlCLKM-PCPkmXu1iRmdeb_VohBKhsLxuQaZdBRNzm5_obL2vCC4QJnJPtgl3zBOGjlZzTe-0iad8zydREFm9iRGyrgERS1iMJqvt7WIflzbx5lPqVu1O_loNHnXh7mk5k1id92JvGH0FzYV=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "8.2",
+      "view": 37,
+      "releaseTime": 1756951142218,
+      "latestTimeUpdate": 1756951142218
+    },
+    "5": {
+      "id": "5",
+      "name": "Sư Phụ - Mãn Mục Sơn Hà Y Cựu",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczPzoxv9sf3A30KLgK7m2QySfVefpjSxeDufcAxlNRiye_LwF5l7JMbYEbKxR4R6CyXO_Bc6lKjnCsg_lO6oVtVBywUQqG_8UJCcQ0TrnhLutZ6pU1Fv_zOhxLB7tDT4ElC78f1uV_eic5acXiQTH7dD=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "7.8",
+      "view": 3493,
+      "releaseTime": 1756951143587,
+      "latestTimeUpdate": 1756951143587
+    },
+    "6": {
+      "id": "6",
+      "name": "Bí Mật Của Tróc Yêu Sư",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOGNU3_Q4SZHch5zabW5NFbiged5DJI2FaBjEmZPU8cjfeEgMsJ2Uz0uzFBKAyACwMPcPopkFlFfxpJ52laUKwqjQ3O4WbqESIf_vR8jDeJNBhbFHz6NwAxWCUIch5yQGcFeVJouGxzCnYJnJxIrDu2=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "8.5",
+      "view": 1050,
+      "releaseTime": 1756951145018,
+      "latestTimeUpdate": 1756951145018
+    },
+    "7": {
+      "id": "7",
+      "name": "Thượng Thần Xin Nhẹ Chút - Lạc Bối Bối",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczO4k2cUZSzMvpkgqHkEAq0sFRAIT4wK2D0kvNxPL-Qqi5jtA9BpmtGkv86xQ0dHjoCRQQx9lzVomlZQIqqnkdByjvS41eeu8JkxLk9O6xABNXCyCvvLJ1sIs3fWRDWxcNWAzSr2oZ5mjjCTNTujn_hr=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "6.3",
+      "view": 5853,
+      "releaseTime": 1756951146483,
+      "latestTimeUpdate": 1756951146483
+    },
+    "8": {
+      "id": "8",
+      "name": "Xuyên Nhanh: Hồng Nhan Khuynh Quốc, Vạn Chúng Mê Hồn",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMf6KN1gj3qA5IyxfZDyVlezeUAzZMTMx9XFYJesa_oKz0gasFqhbWyEJf_C83PuYml5vjdmb6Ln5_2vzN6a_Z5cMdeQIfOxBbrA9fWalxgZMOIOzpUZfFp3BEnde2_NAVl9xIIRKW5Q6l7deoDi6pi=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "5.8",
+      "view": 6824,
+      "releaseTime": 1756951147787,
+      "latestTimeUpdate": 1756951147787
+    },
+    "9": {
+      "id": "9",
+      "name": "Bá Võ - Khai Hoang",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOH-eoNxk8JQq_FG4xSXZLnlFfSBb01b8yaVcFvM5JLoZvA-UwtK_Ge4Bh797A2sn6KoZspt5TUp0pNit-WzKfYnC1ARBKh3v3gHB1MEAmOXA8AgOtK-noyO1YILVDk5UJTRr2vcNQd6Ga6xzt5-Ree=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "9.4",
+      "view": 9275,
+      "releaseTime": 1756951148884,
+      "latestTimeUpdate": 1756951148884
+    },
+    "10": {
+      "id": "10",
+      "name": "Vong Trần - Bất Vong Xuyên",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOd41vy7M7roYvnYYi2IeiN9QIeiW9sjNxPpFhBv36-aTkD1X_cIjZkxJfaSeOU_wJbvHl3JtIylqaecqKFnNZ1XdGUzaXwjtMKLFw1grp2N2mVwlUxkiiGl9QCkOlgFpL1s3AZBUvZk5grTyG7VZS_=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "9.6",
+      "view": 8708,
+      "releaseTime": 1756951150279,
+      "latestTimeUpdate": 1756951150279
+    },
+    "11": {
+      "id": "11",
+      "name": "Một Nửa Kịch Bản Bạch Nguyệt Quang",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczPOhsOBpd51fffJum34ZxvqL81LO7RRRkNB9kh3TxwGQa_Tjk-Z9mifHWxVXh1L6sBG3DMZiy8UUixc3RBjXF13QD1mnsrrI5nyBu7C1ItDGGI08mrDfiocGes8o6hng4A5CKd2wszCrg8cSmkzkLKG=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "5.6",
+      "view": 7182,
+      "releaseTime": 1756951151575,
+      "latestTimeUpdate": 1756951151575
+    },
+    "12": {
+      "id": "12",
+      "name": "Hãy Toả Sáng, Đừng Chỉ Được Chiếu Rọi",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOMUdh7W_hnNOFPtNL4Ndi10p1CBzOBfT6Sml5XvZ5Ljgf6Y6GYygEHlUXlvv4X11j4Sq0u_SGxcHOLfRU248b1sSg8zpL0uuX75W-jNAo4lAyOsMgIXgAxV3z5YtLwB4je2yIV85Vdi4lu_OlAHXs_=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "6.5",
+      "view": 5671,
+      "releaseTime": 1756951152738,
+      "latestTimeUpdate": 1756951152738
+    },
+    "13": {
+      "id": "13",
+      "name": "Nhiều Năm Rồi Ta Không Dùng Kiếm",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczN06JAwF6pTmz-xOaW19fMG-jPb6LybWTLLUEBQkjN9h_bjpeBpirBV8GqwWxRbJZSQycoQmZmwG6PswIHpg2H7czg_zy9b9qooIASKE1rKRZbTM5GmF6Irck0QC3zLzVBn-pGOhYlY8MMA8fBy9MEc=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "9.8",
+      "view": 3539,
+      "releaseTime": 1756951154193,
+      "latestTimeUpdate": 1756951154193
+    },
+    "14": {
+      "id": "14",
+      "name": "Thiên Cổ Phong Lưu Nhất Tiếu Trung",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOL9D8w-OWvkuGEk_hZ67Q5Eb8M1GlmFdK3y-FvjhMNEoWwuWRp0QKDx28b7b4e0uDbUYM6TL9Hbt42pfhO74jVp4JAV_a5Qat6PYNTZ4nxylYu-tHQZ4qm2IcdZoZsvGPUGjd6220M-j7TJZ5_Sc5p=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "7.2",
+      "view": 833,
+      "releaseTime": 1756951155594,
+      "latestTimeUpdate": 1756951155594
+    },
+    "15": {
+      "id": "15",
+      "name": "Nữ Phụ Phản Diện Lại Làm Sụp Đổ Cốt Truyện Rồi",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczObWeJm0uzI0AGNBuWxc1pNwgUOP23KMCg4WGEmDc5jfCFGc2BoZECdv7QLYy4-tAaRyUZBSPUunZniFM1RfyKZ2gG-Q9i0tPoDgb6-Idx7rpFR7nhf3FwxovLlVNWYeADjQIyl3trZteJDT72pYxlT=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "8.5",
+      "view": 2306,
+      "releaseTime": 1756951157127,
+      "latestTimeUpdate": 1756951157127
+    },
+    "16": {
+      "id": "16",
+      "name": "Nằm Vùng Ma Giới 300 Năm",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOmmTS_DNdN57G1Nw-Cso9GPCDm4wzQZ3_R7OtztVPPWXcbwmytb9Pie13-z_GF-kOEkLVA3ajrjQHnoTWjENmyhHrKthnQdJu-F0eml_byL6VlQag3_LB-KOruBAkSAAAt9ybhiqvGqiDd4xAV5iyv=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "9.3",
+      "view": 1230,
+      "releaseTime": 1756951158435,
+      "latestTimeUpdate": 1756951158435
+    },
+    "17": {
+      "id": "17",
+      "name": "Vô Thượng Sát Thần",
+      "image": "https://static.truyenfull.vision/cover/o/eJzLyTDW17XwKMhMzfGOzyvN1g8rLE1KCkjLdyn01HeEAi8jE_2CxPyQqHLjzDJXE_1yI0NT3QxjIyNdz2QTIwDhqBSH/vo-thuong-sat-than.jpg",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "7.1",
+      "view": 2423,
+      "releaseTime": 1756951161144,
+      "latestTimeUpdate": 1756951161144
+    },
+    "18": {
+      "id": "18",
+      "name": "Vũ Động Càn Khôn",
+      "image": "https://static.truyenfull.vision/cover/o/eJzLyTDR1430dbb0NfWMd7MM1A9z8nWxDDLx8En11HeEgmzffH1ny6h4g_SkpNBAX_1yI0NT3QxjIyMAJDgRVA==/vu-dong-can-khon.jpg",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "7.8",
+      "view": 4355,
+      "releaseTime": 1756951162461,
+      "latestTimeUpdate": 1756951162461
+    },
+    "19": {
+      "id": "19",
+      "name": "Ngạo Thế Đan Thần",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHczJJdY0JV_8uQUCkbRvJQKO6i4KUYx9EVpYOMu_owGibrNc6C5fZ66tgUTuQCFCiQXw3XpNkLnsmp5zzUQwGQzRweBYTE25plo7m2RtEvqdAyrM2v0pswIDk_rjbDGNxZkkRD9rude--QKP2PPFWPB=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "6.0",
+      "view": 3989,
+      "releaseTime": 1756951163979,
+      "latestTimeUpdate": 1756951163979
+    },
+    "20": {
+      "id": "20",
+      "name": "Nhất Niệm Vĩnh Hằng",
+      "image": "https://static.truyenfull.vision/cover/o/eJzLyTDW1zUxD3A1ck4zdi_N1w-r9MgyD0sxDQz11HeEAj_dbP1A14jQ8MIyn2J3zxzDZE-XPGf38CqLZDc3f5Oi-KKAgnJn53z9ciNDU90MYyMjAHsxGlc=/nhat-niem-vinh-hang.jpg",
+      "type": "novel",
+      "genre": [
+        "1"
+      ],
+      "rating": "8.1",
+      "view": 6865,
+      "releaseTime": 1756951165302,
+      "latestTimeUpdate": 1756951165302
+    },
+    "21": {
+      "id": "21",
+      "name": "Tiên Nghịch",
+      "image": "https://static.truyenfull.vision/cover/o/eJzLyTDT1w0sDgtMCjFO8XMO1A9zCvSLTK5wzDL01HeEguyAQH3v0IK8TK_i-IjCSP1yI0NT3QxjIyMAV4kSwQ==/tien-nghich.jpg",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "8.1",
+      "view": 8687,
+      "releaseTime": 1756951166448,
+      "latestTimeUpdate": 1756951166448
+    },
+    "22": {
+      "id": "22",
+      "name": "Phàm Nhân Tu Tiên",
+      "image": "https://static.truyenfull.vision/cover/o/eJzLyTDT17WITwqMNNQtNKp01A_zNXY1ifQuc8301HeEghwTR_1IV8PsTO-w4HKTUP1yI0NT3QxjIyMANRgRnA==/pham-nhan-tu-tien.jpg",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "7.9",
+      "view": 8110,
+      "releaseTime": 1756951167628,
+      "latestTimeUpdate": 1756951167628
+    },
+    "23": {
+      "id": "23",
+      "name": "Thế Giới Hoàn Mỹ",
+      "image": "https://static.truyenfull.vision/cover/o/eJzLyTDR100qKnJ08QhzLS0M1A_z8zUJcs0zsMz31HeEghwzA32PJCfTqky_MIOMcv1yI0NT3QxjIyMATdMSHQ==/the-gioi-hoan-my.jpg",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "7.8",
+      "view": 7767,
+      "releaseTime": 1756951168732,
+      "latestTimeUpdate": 1756951168732
+    },
+    "24": {
+      "id": "24",
+      "name": "Đấu Phá Thương Khung",
+      "image": "https://static.truyenfull.vision/cover/o/eJzLyTDT1y1Mcw2M0C0IMAvL1g9z8nUxMYwyD3Tz1HeEgmwfR_0SAzefTKOgCI8MC_1yI0NT3QxjIyMANhQRaQ==/truyen-dau-pha-thuong-khung.jpg",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "8.0",
+      "view": 479,
+      "releaseTime": 1756951169812,
+      "latestTimeUpdate": 1756951169812
+    },
+    "25": {
+      "id": "25",
+      "name": "Linh Vũ Thiên Hạ",
+      "image": "https://static.truyenfull.vision/cover/o/eJzLyTDW160wTC70dXI0zAnO1g9LL0gpsAz0CA_x1HeEAqckR31jj0A_n_Jg8ygXC_1yI0NT3QxjIyNdz2QTIwCuMBMz/linh-vu-thien-ha.jpg",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "7.1",
+      "view": 9137,
+      "releaseTime": 1756951171102,
+      "latestTimeUpdate": 1756951171102
+    },
+    "26": {
+      "id": "26",
+      "name": "Thần Đạo Đan Tôn",
+      "image": "https://static.truyenfull.vision/cover/eJzLyTDWr8g0KCmwdHIMCMp0MTQsNw9yMzXyczXLMXTyiTfNcEv3twzPzIvMTXRycwvON8gJzst1CsgLdw5zTDQ3SgyLMCkvLCgyL64odfENi_Dxcgq1LTcyNNXNMDYyAgCEwh2d/than-dao-dan-ton-6060282.jpg",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "6.8",
+      "view": 3236,
+      "releaseTime": 1756951172110,
+      "latestTimeUpdate": 1756951172110
+    },
+    "27": {
+      "id": "27",
+      "name": "Mỹ Dung Sư Xuyên Qua Làm Nông Phụ Làm Giàu Nuôi Con",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNh017h8blChyagrEXtVQ3iFf32r9_A-ixVdtHWSa6z_7Ey__aMXMyPhE8Ck-L29d3A6O7MX9v_s1JXkL0G6uNtxj4KD3uut7TSWkuBD11G3FBlCPgruufPjMd86HUC9WayCV9KeF3-9NdtM5lW62LB=w215-h322-s-no-gm?authuser=4",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "7.6",
+      "view": 1402,
+      "releaseTime": 1756951173159,
+      "latestTimeUpdate": 1756951173159
+    },
+    "28": {
+      "id": "28",
+      "name": "Bá Chủ Thiên Hạ - Phong Thần",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczM2MrumiEJon_Xm2o6CevilEctdZso_5vqag5MMYlW8k2W-2czM4mYKLvSW2O7PXXQifqWUF3m75JIlMsnOFtX4Qqp52HgcfI9RVObVRTwmJO3dZ9wrI_sATR5C-CutmRfdUg1wjxEUT8RSjqP4xKoG=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "7.6",
+      "view": 8275,
+      "releaseTime": 1756951174637,
+      "latestTimeUpdate": 1756951174637
+    },
+    "29": {
+      "id": "29",
+      "name": "Sau Khi Không Ngừng Tìm Đường Chết, Ta Trở Thành Người Trong Lòng",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMFaOb80WlP4dDslWlT3EC81KyEaNcbwdIujjV-_TQRGLTaxzIcElSLxEbl6CrtjpyZYv5yL0R-Q5Uc6BDQ0o8nF_d33mNzDtnFnORDZ8a1Qp537OGCgufFD9GFFVn9GZTPSfWg9dli0-Fw8JokRapM=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "9.9",
+      "view": 9770,
+      "releaseTime": 1756951175850,
+      "latestTimeUpdate": 1756951175850
+    },
+    "30": {
+      "id": "30",
+      "name": "Sư Tôn Mỗi Đêm Đều Muốn Ta Hống Ngủ",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOw7ag7BRusQFdB0u4mhetp-uuRP92fT_ySeiCiEvMBnZqUFCeJ0_uMivW1mBC8o22UvYDlQCP2luUefKRRmKsDvHBAvYXthA8jf4mNzZTRJtlbksr56lEz2JCDJFbqyRy6oTsm60jGMc_1lYOjLOC7=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "8.6",
+      "view": 3186,
+      "releaseTime": 1756951177211,
+      "latestTimeUpdate": 1756951177211
+    },
+    "31": {
+      "id": "31",
+      "name": "Xuyên Thành Tiểu Sư Muội Chó Nhất Tông Môn",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczM7JY5ovOq0YhEKxwKkdLePkFukByqA5qOu1eNcVe-g8CbE-n4Zukd0z38Hbv2kD6VXgVywCJOSxI4McpzP8ixyaA9moQq21bGl5qtVpKOCaA7v9Uyz_RE1Q3u2Lpj59LynSemgfaIN0LanWHa_zuA8=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "6.9",
+      "view": 4596,
+      "releaseTime": 1756951178582,
+      "latestTimeUpdate": 1756951178582
+    },
+    "32": {
+      "id": "32",
+      "name": "Tuyệt Lộ Hoa - Gió Thổi Qua Lòng Ngươi",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMsHpChWzUTeCkJvCMbBmWYlCT92MI3glh7pfTxJtlRL3G9CL6f4HSJt2j9Aulu6emkTKWhSR1IE7jBrmc0yq6Mf-zodL4gtcxiCRhXkkWXlYhkByRj1ZFw4KdNQ3N8bEuk6cU81ry1E5_yOvOleuBl=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "6.0",
+      "view": 3035,
+      "releaseTime": 1756951179348,
+      "latestTimeUpdate": 1756951179348
+    },
+    "33": {
+      "id": "33",
+      "name": "Tiên Này, Không Thể Tu Được",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczO34mHOHwPgwAG8Ta7BrHHrv_EbaPul2GiIeaBhTmXZctqdlEP-qm0NMSN29d8xSbPVzfayA_BXeMl7JL25z5iDbbYiv1hRkZq7GuyRZ_qc_mYHd5yutolwm0zDNoAGyUVIGylTArrh972ChL88rcmC=w215-h322-s-no-gm?authuser=4",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "7.2",
+      "view": 4436,
+      "releaseTime": 1756951182152,
+      "latestTimeUpdate": 1756951182152
+    },
+    "34": {
+      "id": "34",
+      "name": "Đạo Sĩ Ta, Bị Nữ Quỷ Điên Cuồng Tranh Đoạt",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOV8qss8AQKu3S0hTzoI4cpsNOTypt_jDcBOLoYrYdkHI5GwDMRK567ctuy0rxRS8hlkmTUTQPwvcHMT_B7YrRYWayAwEiMbqjApvgJmJmAvPDhbil2qtpsguNYQhAMM3gB1HOaLnZEJXdMwtJvq2as=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "6.5",
+      "view": 1679,
+      "releaseTime": 1756951183729,
+      "latestTimeUpdate": 1756951183729
+    },
+    "35": {
+      "id": "35",
+      "name": "Người Khác Tu Tiên Ta Tu Mệnh, Mệnh Nữ Chủ Cũng Không Cứng Bằng Ta",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNR_C_GWnVHMVXFHHg4bK-8NQlcMoRMqDJAOkicZQUU5yYvKoFclqiMwu5TZkF76S6tyX2apLjJLoZ4ngIn9OPnXaF5DEi3Pu1D8g-Lz1G3dnuuqG9414AAjnIT4JUHmb0JtT4o6SvQyNPs0VyiGnAd=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "6.9",
+      "view": 7430,
+      "releaseTime": 1756951185067,
+      "latestTimeUpdate": 1756951185067
+    },
+    "36": {
+      "id": "36",
+      "name": "Huyền Giám Tiên Tộc - Quý Việt Nhân",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOQj9hDQHYai4oDV4Miwv_ULunxJZAlzGjbSDE4ywexAAj2cHijArW7xWQXPXHjEX8Nz6aEfpObjLadxNSdNej1-VteG51aw0wLJAyThn6vLUfuBAQR-XWKWymmgzP9dByGXiRiNnZfw-Gb7laBfhRi=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "8.9",
+      "view": 6039,
+      "releaseTime": 1756951186688,
+      "latestTimeUpdate": 1756951186688
+    },
+    "37": {
+      "id": "37",
+      "name": "Linh Khí Hồi Phục, Ta Bắt Đầu Tu Tiên Từ Việc Làm Ruộng",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOAJ_zox5xQv4OniLCXSEn8D7y9zSXtPTSUbhUUFyjGYcVEKZsDPkv8B4Wi6BVEJIxiDMjLm7_wRZFmOm_5YZBFnJhrgap0CqTNElXqBK_Gg9vykx16rSGyaVVjmM-BTaf6ovF0dH32s2v7hEs7db_2=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "7.8",
+      "view": 3903,
+      "releaseTime": 1756951187420,
+      "latestTimeUpdate": 1756951187420
+    },
+    "38": {
+      "id": "38",
+      "name": "Nhất Khí Triều Dương - Thân Vẫn Chỉ Tiêm",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMSkJ4r8Ntcz4gJW1bUqtnaHmyrds84vPJP6dFrG06xlQj5tEv_UW5hU6uH2vxRLP_Ik03EFP1YAX1Hov3Eccgr5OeSgLQtHhjiz_cF37nnNvRM1Lieasf5fNr0SMdV6fVxRa13-vsKUBOAL8Sxl8f2=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "7.5",
+      "view": 5524,
+      "releaseTime": 1756951188860,
+      "latestTimeUpdate": 1756951188860
+    },
+    "39": {
+      "id": "39",
+      "name": "Xuyên Qua Làm Nhân Vật Quần Chúng, Vô Tình Dạy Một Đám Đồ Đệ Thành Thánh Nhân",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOQRSDkF9q4Yxu9eK6zouJmLDKMsX4mQEXqo22CxP1wCiMv_3ZCAl_k3ttQI_6L1SaOVbtRsqiy_Sjb_H_x4eSEbcJhPKJXpLY_zw8RQ99rP4NkKqaH_eliWNBuXMbWE7oP-5nEUv6RRGukRjyeg-hG=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "8.2",
+      "view": 7567,
+      "releaseTime": 1756951190244,
+      "latestTimeUpdate": 1756951190244
+    },
+    "40": {
+      "id": "40",
+      "name": "Ta Dựa Vào Y Thuật Tung Hoành Tu Tiên Giới",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMajCRzc40Jex4UUU8mgz2WQbrFZFYa9gp1-YfEh_Wc61_SfBAwlWwRyh9iIf4fhdAKIKQ6KPG-UZAm9I3zlLkve5qg8Uv3KN1SEVYNi2j6Oy7tigR1CDBbFXQ-XD7IHik8slutyBTk7rwyIrhu_sO_=w215-h322-s-no-gm?authuser=4",
+      "type": "novel",
+      "genre": [
+        "2"
+      ],
+      "rating": "8.1",
+      "view": 2808,
+      "releaseTime": 1756951191304,
+      "latestTimeUpdate": 1756951191304
+    },
+    "41": {
+      "id": "41",
+      "name": "Ta Có Thể Sờ Cái Đuôi Của Ngươi Không?",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNV3Ir9iHVtDeKW6eFEGrXG1bFRSGyrROJAmc1dg-SFa_lEQs65CqSsG2iB8ojBtQEdzELFyWHf-BWkXKsU8lRDs79Gsg3c-4XCbnmdZ82pDPc0qTi9ClDwpo3wd1mVf3ZSd_DOBwR13_2BU2jl32Xd=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "9.0",
+      "view": 95,
+      "releaseTime": 1756951192722,
+      "latestTimeUpdate": 1756951192722
+    },
+    "42": {
+      "id": "42",
+      "name": "Tất Cả Phản Diện Đều Hắc Hóa, Chỉ Có Sư Muội Là Hài Hước",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMgszvBhW8d_dHujHqKogwX9Jre3FBtCUs3YFDGWu3HopvfFNivgZlTOy2lppOBLvKYjLMJGmJm5MkIwgDPBpBsONGhYhNMljO3rHQSSKixDGQcvJQbTXA8e2uD1qhEv8N7BHIMmzEgnIMLT9G5eN97=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "9.4",
+      "view": 6326,
+      "releaseTime": 1756951194094,
+      "latestTimeUpdate": 1756951194094
+    },
+    "43": {
+      "id": "43",
+      "name": "Tiêu Dao Tứ Công Tử - Tu Quả",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNEuOqOQfKyPasxe06ERC6makcTJmw8sXVIrsrTjAmLsaWrx86C_Nj_l1tbA7I1e036_kko1qtt9Lt-Ihy-ZUixD0qtx7AAuAFChQdDzkGrdHRRxgqsA5-Qczcn1zzJLVbFtrVMPn4msDFLAzJf180Z=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "6.8",
+      "view": 8264,
+      "releaseTime": 1756951194675,
+      "latestTimeUpdate": 1756951194675
+    },
+    "44": {
+      "id": "44",
+      "name": "Sư Tỷ, Ta Không Muốn Cố Gắng Nữa!",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMzaW58Xu5EGtFdXDIxQV6AatjO3HbVAOYZNSJqohlBWw0d7Q4KfRM-s00DD_qGW4e_Tde5FNWz__voCDqP295ZL3NoSHJdD5zCUNnl2BYwcxBwpgQF7zWRg7t_ApoW61Wri_ijjFSGt7iJWw_xSTAh=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "7.3",
+      "view": 37,
+      "releaseTime": 1756951196044,
+      "latestTimeUpdate": 1756951196044
+    },
+    "45": {
+      "id": "45",
+      "name": "Trăn Trăn Mỹ Nhân Tâm - Thập Tứ Lang",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczP0mF5GlRN7BS82vELJMAcEuyhKAIujFcXGP57ndaPD85xzER5K0-gk2L-czq1ihL1y0PB-flQqx72kWcv8EaDX4hA_hxbsiiEu5szVOVOMO4rSkMg2LfVQyt3nQhwgXKHnosR8z4t-p3vMtkkkRwT-=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "8.5",
+      "view": 669,
+      "releaseTime": 1756951197149,
+      "latestTimeUpdate": 1756951197149
+    },
+    "46": {
+      "id": "46",
+      "name": "Ta Không Làm Kiếm Chủ Đã Nhiều Năm",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOAuUuIROVfBsZUs5mQWjd7R4vXy1blY9dqfeftexn4ecyd6bOzNbiFUUu9PLfSXeMFMubuDJTGSa5nKjP6HeX1t4pBUYbaoG07c7VChxLfQ2gsma0S6-TWA6Kn0uPbpdpE0wpfMZd5abDH9oy-dEgd=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "8.4",
+      "view": 3748,
+      "releaseTime": 1756951198803,
+      "latestTimeUpdate": 1756951198803
+    },
+    "47": {
+      "id": "47",
+      "name": "Thiên Đạo Hữu Khuyết - Bông Lan",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMmCG2dD8HEqDQp8p-yDSxuIV4CRXj6OxE3XDBUoDDaTd25epgRRuIxuXpfZOkedmRELEW_Hu-rHqMypmdglFcOtD10Kejwjo3nM7CvGldRmm09A_3SM22x3SO8ReJiAqkaJngVID2Qg7aF12Le4YL2=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "9.9",
+      "view": 6831,
+      "releaseTime": 1756951200027,
+      "latestTimeUpdate": 1756951200027
+    },
+    "48": {
+      "id": "48",
+      "name": "Ngạo Nghễ Trảm Thần - SS Hà Thần",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczN1Kz0F2XVGP0xAR9l3l0xellvl9Xmc4GmB0Ui7xw1AN_GNhdFmcQ6INOh-fco7Z-ZAJegE-_bmNcsqnrMGEDmDQfT1DBaNQNUH9_Ownu4DSJTNeoJIkVuQ_-Y8Bx4AGVtOTpUZ0lQPgCxM1-oLiNsi=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "7.2",
+      "view": 9115,
+      "releaseTime": 1756951201449,
+      "latestTimeUpdate": 1756951201449
+    },
+    "49": {
+      "id": "49",
+      "name": "Ngạo Thế Tiên Giới (Vô Địch Tiên Nhân)",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMEaT8XFhoyy_3Z6BIM9-QdEu33w5RSupIuHQ7NHBUPzCHznweGhg4e8Z37tv5e7gdqPMw4AQDNUwuNdANLAaHgKOnbOil7FabuurmNjqAUQaPEtPXDnoYi1zNuRTuEssBeYvVXOGcDK70nXv-Q2dU8=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "6.5",
+      "view": 1126,
+      "releaseTime": 1756951204040,
+      "latestTimeUpdate": 1756951204040
+    },
+    "50": {
+      "id": "50",
+      "name": "Thiên Cổ Phong Lưu Trong Một Nụ Cười",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczPWxCIIMINfwwzsxc9IGShzHujOrowbgMqlJirAqnHM07XClPq6wzwA0I4d-qPF_iaaNnYZMoHa5m-UgSYKW7e4vGfQXB-JAZ8p2dknzUFhrT1-vADC8iWPV25KY-aHfnWsA5SbgtHsE85Qgxy1_XX0=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "7.5",
+      "view": 5960,
+      "releaseTime": 1756951205300,
+      "latestTimeUpdate": 1756951205300
+    },
+    "51": {
+      "id": "51",
+      "name": "Tuyệt Thế Thiên Tài Trở Về Đô Thị",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczO15_FVrocO1A3sAo0ntQVWUbKIKpRzqR0-x5PzpVgbw7xonFhLGMFTlgH-s4HCJkOKAR9u6qsxAgpDFSFK0MdMrTr8nYFc0AxsVafPyTjx79e9vG_K9E3hn8wLOxq6Pwpz9OQXZipJx_Kzul7FzgOm=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "6.3",
+      "view": 8024,
+      "releaseTime": 1756951205952,
+      "latestTimeUpdate": 1756951205952
+    },
+    "52": {
+      "id": "52",
+      "name": "Nghịch Thế: Trở Về Trước Lúc Vợ Con Mất",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNu0EU9EWXn2PUe7-ArNbb6WfAw9TRUFelKBPoY71784VbxAgvT_RXU1nNeWDjsqrt_YmrdbaKBkpRy-uVtCNmNwq7j5V_Kfk5VYN6AV2vE07LiIx8upim4Quf6oeGRgIPqbi-N_BHnjd9sHN9bXjR7=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "6.4",
+      "view": 1921,
+      "releaseTime": 1756951206825,
+      "latestTimeUpdate": 1756951206825
+    },
+    "53": {
+      "id": "53",
+      "name": "Sau Khi Linh Khí Sống Lại",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOl6mGHwtywnvUWzApEt2kB6oxmQgb7NmxUlcNG_Kh4Gn4qCG1ppgGR47sEeV6AW2jrtEnG1gYllQv2U0Q5Sv-JpB8KxSAwV9p9khXT-bbNOE6LYLvfa7smoQR2ffEMeL4cx8JSTL8lc4SRpkmmCtBI=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "8.8",
+      "view": 1785,
+      "releaseTime": 1756951207874,
+      "latestTimeUpdate": 1756951207874
+    },
+    "54": {
+      "id": "54",
+      "name": "Vĩnh Hằng Kiếm Tổ",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMUPoN9rtDxBjCKIXK37m5t_OD3Nw__QUB2p7S8iSSaVvPInUvzjU9Ls9CnMxLy8sM-Vw7MAn5TzLu7zlodKdMbbpI_Ryx_pJdwtynpkjrwEKBdX16ooBiyrCUI1Uy8HX6P4REydJ4mA_zEzeyFen8Q=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "8.0",
+      "view": 4922,
+      "releaseTime": 1756951208793,
+      "latestTimeUpdate": 1756951208793
+    },
+    "55": {
+      "id": "55",
+      "name": "Đồ Đệ Ma Tôn Mua Một Tặng Một",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOVRCvWvfALQ6aHKRczdNW-rrqNFdsZG0Wyq1zhI-4hxpswKrdhEVurlVOKWcyaxUyAgPzys-oGSeSRS3DWrsV0Dv6QaB1JGnZjvRnbOqHy7Xs3AIHm_9qpapHhYShLu-_i7DcOeypgEtjNY94V1g-P=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "9.1",
+      "view": 8848,
+      "releaseTime": 1756951210161,
+      "latestTimeUpdate": 1756951210161
+    },
+    "56": {
+      "id": "56",
+      "name": "Vạn Cổ Long Đế",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczPmqgRkSYzAeb1aD1IO7MFPggK4PxtXwuUTIep6q_Kqm1aLzxJwNt7NlgdyG2UWnK49lf_QHwV-VlUTTxBWi8ailCUnjQ3VuZ20eNMng7OlnpawKbX3vaTfL3Smtn8RB5pAnRphOyqkOFZLGEGOdogt=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "8.6",
+      "view": 4001,
+      "releaseTime": 1756951211361,
+      "latestTimeUpdate": 1756951211361
+    },
+    "57": {
+      "id": "57",
+      "name": "Kiếm Quyết Nghịch Thiên",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczO5U8sJx-sD2X7y6Hajl_p7ncDYz8xP9ygK5lEoldm5oSTpLcWuFhGymRuJGSjFLRGQoJPTElADqVCdfYkb0XU2FjCTfvRQ9YanaqDfT-dqtIU5WA9uUnyDeDMGVuP9uqWFSEJWUUNvfgRIg_Gtcdmc=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "4.2",
+      "view": 907,
+      "releaseTime": 1756951211925,
+      "latestTimeUpdate": 1756951211925
+    },
+    "58": {
+      "id": "58",
+      "name": "Đồ Đệ Toàn Năng Của Thiên Đạo Chủ",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczN7eThu3WVRIakBsb3yeTU7Zl9OWqEU-YrpDx1BHB4sCK08wMTCffbtFj9oRZ4jTeOfXEFWPhr6pakSJp2_EUaKI3rH9prbAevJtwwWq-CDjc0fT7uX9iB8Ngz9W4F0-MVrUEbXyZRi20O1xLhP57NE=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "7.1",
+      "view": 4424,
+      "releaseTime": 1756951213358,
+      "latestTimeUpdate": 1756951213358
+    },
+    "59": {
+      "id": "59",
+      "name": "Phàm Nhân Quyết",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOGwmk3yVxI3eNY_RgRpNqywH04ILPCgHV_xU3CMsyA2orsdKAPqKX06rLuSoja31Z2TVf8WVRl_SqnEPvPcUmXSorGBfMv6T-IlpyFf8pxWGrs9Y8zVs096uOvgiKpdyQm3DyUAfMvqMp8zqs0-XWA=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "8.8",
+      "view": 2312,
+      "releaseTime": 1756951214263,
+      "latestTimeUpdate": 1756951214263
+    },
+    "60": {
+      "id": "60",
+      "name": "Diệp Vô Khuyết Truyền Kỳ",
+      "image": "https://static.truyenfull.vision/cover/eJwN0MmWa0AAANAvqvNiChZvQYwRSpvZOIYSMyHK8PXd-7u6fU39221mtnVuvZhi3XdDwZG0SCTL78_9vBqswAGdCmHpV0imB8jAo556S92Tw5yKr113tNLdlcfB9FWomjLLtlICT2HGnQaJTBGiZcxvS-DSL32i_T7qyM5_u7veUX0TfCcMXzhwRhHcX1BrY0WYa1i0da5YoQj9sOb5wx5NJFtza47DS3kusfDaoOn6afznNTxPLefTAkGALYRyGvj9cWpGgTTXBTPIh0cBMsVq-ecS7o16vKoh-fFAJNsCu-r73jvM8t5if1g7Fwc3P-DALaFzrD3RWoUE57O9v5S02rKNRokZSBZzuypTrAEz5RfRxFsPvl6ALf1dCl-2qy-_T5l0OZxvL48hHm_gYQtvNsseQb2RFeKXJRXkCj_V2DDjVAt1C6kGFfrl9smm0jkyNkLUyemrbvNz2iKuMfVdR-4NSywl0pvBessQ0auaOxrU42YyzKGRrm6zPIaTKZZONCr3XT7Mb9_9vtmFpgxDp-Yespy_-MnRDOrznt-KhLefPsP5OxV4w9xERou3Ct64fK3G1Dqqgjj2GgeDy8ZTg8fcKKYJDqQRcDRHS5SsjfTpQdGC0Yuk0LrCUEE2qE-qRLoHJCh4uk19RRcOhXlYq73SaxKq7mj1UVSbywcVGSmWP8OUt_e7FMfVVn4evK9LT1fNrn5N2uZTNw5SveicHPkM4_87STCgpkjyF3t-7Kk=/diep-vo-khuyet-truyen-ky.jpg",
+      "type": "novel",
+      "genre": [
+        "3"
+      ],
+      "rating": "5.6",
+      "view": 511,
+      "releaseTime": 1756951215104,
+      "latestTimeUpdate": 1756951215104
+    },
+    "61": {
+      "id": "61",
+      "name": "Tiên Công Khai Vật",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMPmjxVWQELzaWnJ9nweMsUXXp2porDJ3yz72YM_i2MoBrEt9Yv58d1bW5zMLFEXGIQPP7sJY_Aqj0VsYls3opYCEtoVYZ5zjgh2bcf4f6TDfH61bjLvn0UDphxglmpRmCzRdP3uwciAfQUDXRsmI53=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.2",
+      "view": 3059,
+      "releaseTime": 1756951216605,
+      "latestTimeUpdate": 1756951216605
+    },
+    "62": {
+      "id": "62",
+      "name": "Yên Vũ Lầu",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNREucl519KcOGlUGWb47nLTWWN2ox_ajICc2l-gH9Qxr0JTW9DYsLAxo4WNZRhiEZ7eoEVcoXSydqEg2Oi12vGaSG-wgioctiy03XO1pikBnmoMgX5uOXeHrexGDAcB1X_8LC-SghH0hTrQnYIklHK=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "7.0",
+      "view": 5545,
+      "releaseTime": 1756951217797,
+      "latestTimeUpdate": 1756951217797
+    },
+    "63": {
+      "id": "63",
+      "name": "Chín Vị Tiên Nữ Xinh Đẹp Của Tôi",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczOKfA-gV8J4Dx0sZgRABxiOY1hVbb99Jbg7EHxR_AcoZbzjakxlDFxefwc8QzhxcL-YZZmAgjtKHSKc89f7c3fx7Ufe5DbBHeP3gxgGxBaB0n1OtNEfGTK6bbfMQS12uIOiBmo7DlEzTBI3VpmvU-R6=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "3.7",
+      "view": 2525,
+      "releaseTime": 1756951218533,
+      "latestTimeUpdate": 1756951218533
+    },
+    "64": {
+      "id": "64",
+      "name": "Sau Khi Rơi Vào Thế Giới Thần Ẩn, Tôi Trở Thành Thần",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczMf4tHQ1-gvSK0ppqoexzMNy4DrMIfMj7de4fc9oRzu18Bt_3d02Lnd7GBKXz9F1dGayk7KQvNBPrlwep2c8qdHtrmUvMmJg6X1P4T69v_t9JbY8yhUWs7Pm__2E3VIfUXVTAU0qHENXZYEHjOJ4BX7=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "6.6",
+      "view": 2368,
+      "releaseTime": 1756951219823,
+      "latestTimeUpdate": 1756951219823
+    },
+    "65": {
+      "id": "65",
+      "name": "Ta Mô Phỏng Con Đường Trường Sinh",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV84AoaILSug0drnEX-oCp9-hIcAK91fL65iTk0zfRuERUjkonQTsOVwLCxAksnMo2DixVSc7lWJVJX_56A1PHxJnJQH8NZU2NaUJh7pl6erWyCe_ZKA6urAvFZBVkERANIKtg8Uv49oy_ZZeKgJWS-mc=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "5.5",
+      "view": 7399,
+      "releaseTime": 1756951222211,
+      "latestTimeUpdate": 1756951222211
+    },
+    "66": {
+      "id": "66",
+      "name": "Cuồng Long Xuất Thế",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV86xd9GWB_bLMbDTuFsBovuNCtyOXUBujZ_vS5tK9NoBhqf0Ie9PhKtmZTW1z3-Vg9oTLPr865evbW0PlmRspNegJSqQpBZKe9tgedwczpZDs8SxKcqkMbIMEKe_dao5wiRGZ8iQTqfOiD9ivO9zyunx=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.5",
+      "view": 7251,
+      "releaseTime": 1756951222993,
+      "latestTimeUpdate": 1756951222993
+    },
+    "67": {
+      "id": "67",
+      "name": "Kì Tài Giáo Chủ",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV87zKk6trXbKUtZMS1RWtQMPU8hW35mJ8czNYul8Q3WpDkW1rlyXgZBt1jtFvTxIOqKpnA5rcLym-yGmJ-R5Ao2PpMz8v8FfTWVJtK3NZmZrEct6vCBZBLIVEmW6sa6VvVaRAlG6lOXeQM9JIaPFtO54=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.3",
+      "view": 8398,
+      "releaseTime": 1756951224474,
+      "latestTimeUpdate": 1756951224474
+    },
+    "68": {
+      "id": "68",
+      "name": "Thái Hoang Thôn Thiên Quyết",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV87GVeDfEokAfgdxN3fY8guIwF_Qt-bHQO5kimJAqtnZuYE_9pYvct_9TXd5cGeq-TT0RAdCdnFmk8p6sdLNpUWy3XyYoch2-Xsgc1sg9OPwCUqK_OmMcsBMdVQVV3HcYS-HCJ5YzVnRIEcRqiwGA1ol=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.0",
+      "view": 4806,
+      "releaseTime": 1756951226082,
+      "latestTimeUpdate": 1756951226082
+    },
+    "69": {
+      "id": "69",
+      "name": "Cải Thiên Nghịch Đạo",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV86pJVT4LL8XMGFEaiw-CO3QhtaTkuI4XbaZ6WuXzwIvzcFpEbBVCIHfxpXv-0mTVkcAwtvaUQjkzBg92eNCDmMd0qjFm900OcT_vf2sjthbgPKUj4mPbK_lGhiIfcOJKf0UQ-oCxeMrxKTve5z0v_J8=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.0",
+      "view": 737,
+      "releaseTime": 1756951227337,
+      "latestTimeUpdate": 1756951227337
+    },
+    "70": {
+      "id": "70",
+      "name": "Niệm Vô Song",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV87TMOUbKQkmftuoh9e9tNKvHQHhafvAfc88GSK3NO9mntvFdXIScDxv9gTpXcOIAbAEn5Ue7aSG2nfPAeJh2N7AAHXOYJOFGgPWrXi3l54SZxUCXOvvH2Rg6RFHfXOYvAGHBrYYLwMyoLl5-Lp985EX=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "7.1",
+      "view": 8997,
+      "releaseTime": 1756951228756,
+      "latestTimeUpdate": 1756951228756
+    },
+    "71": {
+      "id": "71",
+      "name": "Vạn Cổ Đệ Nhất Kiếm",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV85GG5TUfWaPbjbSyC97eC0gURoYcf3nNki-7GPEY8rPPiHC4MI0pJTl9KhsO3JCbL9-wUaERTpYXQR6schfyXzncl25N8j2zTCCtP020NSSNzxlm6W-NDBuKDHK8HK484lpY5lIY77JMGO9SOzVblYu=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "6.9",
+      "view": 7227,
+      "releaseTime": 1756951230314,
+      "latestTimeUpdate": 1756951230314
+    },
+    "72": {
+      "id": "72",
+      "name": "Thiên Hạ Kiếm Tông",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV87ZN0jdjb7jPOGYmLytlZwjSBMhagY_6lVsM7q9prNJdEREzjPXpwRuj8MCcWU0CkINv1LpiTXf7f1C-2p7G5Z6VRfs2UXfWd1MLl3Apik5FCmYHryIKp0nDMXBkOjhusAeA4dEUcWpN9JPGQK9BjxZ=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "5.4",
+      "view": 1869,
+      "releaseTime": 1756951231623,
+      "latestTimeUpdate": 1756951231623
+    },
+    "73": {
+      "id": "73",
+      "name": "Mãnh Long Thiên Y",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV878H_708_iMuU9iNlNQ2_fWvd0HEaH3eo5UbSeR_VTAVBFeVbGMY8nY6Z2TLFc2YtvObCPa4sf8yb3VDyi6BQckOwjt2CKbSdjuPgbgAQbmn3ruTLVY1KNN_chzxWskWTI4RKdFCxHKNOguLvkObRVR=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.0",
+      "view": 5480,
+      "releaseTime": 1756951232652,
+      "latestTimeUpdate": 1756951232652
+    },
+    "74": {
+      "id": "74",
+      "name": "Vô Thượng Kiếm Đế - Thiên Thể Bất Tử Ai Cũng Nghĩ Ta Vô Địch",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV85jSepnxggcEnVQTkuJh5v8IgZ_zS8GGOzMvbWm51p-MS9TaZ879t7FP1xvecUqoqMMDCw5l22bfxZo3Bi9QhTWJofIFTFNaAKSV69OG5584zVB6cgGK2duuZGhTTD0CjbwUmUJJxIbFO2qSbVGrrEx=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.4",
+      "view": 7248,
+      "releaseTime": 1756951234060,
+      "latestTimeUpdate": 1756951234060
+    },
+    "75": {
+      "id": "75",
+      "name": "Chiến Binh Tử Thần",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV85KVsi3tO9cKkohT7X4bhMXZ2JRPuEMAd1lB_YJPw2hdhyyT1Resjs6OjY507XXaucbBQwjkR7msyn-_sNIlY3L3OquQLgxTmCTOf7oyq9dBupsDtcnuw5rV16gHo_3z1_OuEhLc2ld52olEe7SpXYn=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.4",
+      "view": 7029,
+      "releaseTime": 1756951235199,
+      "latestTimeUpdate": 1756951235199
+    },
+    "76": {
+      "id": "76",
+      "name": "Truyền Nhân Thần Y",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV87z1HsJgmLMO2LoXgZ3wF9CdZG-bNAFk8zW5aoalUGDBxrNZWVfqH44YaJhshCsZ4wb72Cg1MoGfvXtN9Dr50UyoNVf1IX2_a27wWSGGQf-o2qsp1O4PF8MBSSk1dE7MKaopvbZb0V-uvbA4zAPx5Vo=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "7.3",
+      "view": 1306,
+      "releaseTime": 1756951236682,
+      "latestTimeUpdate": 1756951236682
+    },
+    "77": {
+      "id": "77",
+      "name": "Thiên Lý Đào Hoa Nhất Thế Khai",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV87FxuRs3gxQB43C40_jgy9SYqrO6T2cPcrXLONpIjQSpJH5T_Hpspa4dhYg8m4yECOvgUj7OVoC8psG5yVA1fyfi9pOsf12wmMffYpAnuY_FshomfSxw1wlU3sn_B8xJcSWR42C81MTdDxY6cgeqFWO=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.2",
+      "view": 7908,
+      "releaseTime": 1756951237521,
+      "latestTimeUpdate": 1756951237521
+    },
+    "78": {
+      "id": "78",
+      "name": "Thần Tử Hoang Cổ",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV84bRqCgL2L8aYzFRigxkzTOxhvjZBIlSvIKyL6CKuL0r1DLCSzlO3VtXueG40T_5d1jZ7fLlDFJ-r8KSA6Av1-XycOaTQl7dX0mcY7DQyDRCWfsgQCRgpRe2H9pB7luXGDvJqdjOGI7txSIHKSEQyiM=w215-h322-s-no-gm?authuser=1",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "9.4",
+      "view": 4567,
+      "releaseTime": 1756951238823,
+      "latestTimeUpdate": 1756951238823
+    },
+    "79": {
+      "id": "79",
+      "name": "Xuyên Không Trở Thành Người Mạnh Nhất",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV86cUH5OcmfoBxRDzm4AIBgtLeiEj6TOOSqN_b2xgIszYfB0nNtnBZMkk3WQkoFHwRvl-quhu5fTq5vXpMlKy47HjCoDQLDbt5ILlPzKHJn_TIweI4e2-FiNybm1VfO8B6q2bMYQ11z-uVdsxh2ROV1H=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "7.6",
+      "view": 9315,
+      "releaseTime": 1756951240162,
+      "latestTimeUpdate": 1756951240162
+    },
+    "80": {
+      "id": "80",
+      "name": "Thiên Đế Bất Tử",
+      "image": "https://lh3.googleusercontent.com/pw/ABLVV8478Nzouy4TtcRX4R3dhAsqsUE3kmWAqG4tmY83apK6ExP4jygjADkGK5XPoegIV3yP3ip_JbA6x5KUXlbCOYhNrlcmSDQWRqbhl4LPQktVnD_9931A8_8M0V3NMuP2YeUoPIpaea0I4CbAo8rRdqcc=w215-h322-s-no-gm?authuser=3",
+      "type": "novel",
+      "genre": [
+        "4"
+      ],
+      "rating": "8.0",
+      "view": 4508,
+      "releaseTime": 1756951241765,
+      "latestTimeUpdate": 1756951241765
+    },
+    "81": {
+      "id": "81",
+      "name": "Thôn Thần Chí Tôn",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHf1AAsFlSAWDbuvQg5F6jXMLvD12oJ0J7sMf7urYHps-T1HsO_YBxkeRCTY1e5L5GEb-bApYVVlQjM7oTEwpzWx_QBnFaQZReNptObuEaWZSz4H6NZMs6UgZFN2OGU3ENiNYwAWGxbBp-i0XKh5Kif4=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "6.7",
+      "view": 2935,
+      "releaseTime": 1756951243512,
+      "latestTimeUpdate": 1756951243512
+    },
+    "82": {
+      "id": "82",
+      "name": "Xuyên Thư Bái Sai Sư Môn Sau Ta Nằm Yên",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHeJqDTicxllBFKZhWTy39YuIYBfdS_t1K6H5JjrBKZSHssVXMwO3hq_z40lSUj61DtqU7vysQn98l3arm8ukwYoxzeAjty8XPlVqw65CihFFzVBauzG2v4qhsalIICZFjlrdAL2-YiUoLL0Cop_n-7F=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "5.8",
+      "view": 7013,
+      "releaseTime": 1756951244540,
+      "latestTimeUpdate": 1756951244540
+    },
+    "83": {
+      "id": "83",
+      "name": "Sau Khi Bị Vai Ác Nghe Được Tiếng Lòng",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHcZiLqwA_aSUZ2B_HFskKwT-ugWgNdhgutLcdyqGDIpXtc-buQ7uFWxLw02NDqxhDGMs6Wy8apDQ5S4C2C0i3j3L1q0QaGQWprB96c2B8e89RLLpRadyBHLKizE1tOgraesk9ct-E1ZabTTpxw-yKx1=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "7.1",
+      "view": 6363,
+      "releaseTime": 1756951245956,
+      "latestTimeUpdate": 1756951245956
+    },
+    "84": {
+      "id": "84",
+      "name": "Tôi Đến Tiên Giới Dựng Tiên Sơn",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHf-K0vY8Z27z5deFtoS5k1Fxvisn5fIp0DJWTvsDWk2dpRG_w72eGcA6y8FGTKvL836RUcqxDMjaW4axOZGtoceD5yCQThCY-sHUUfoc198S8Ht965bT57UizgSZybmYjn2Nq58dtf6n4OBIfvj3FO0=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "5.0",
+      "view": 8242,
+      "releaseTime": 1756951247411,
+      "latestTimeUpdate": 1756951247411
+    },
+    "85": {
+      "id": "85",
+      "name": "Một Lần Không Cẩn Thận Thành Đạo Tổ",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHeU2qK_5VSdCtGoHHrVuDNg4e15x76pHJxosHeFsQTu7INMeZH7_kEFWvOIpaSgGX98TaKWv42KJ6U5iFyWNXpMktrT7E8TUSvDdy69J_f-hr33hyIJJOWBnWLtzsq_GVywmK9oaz9G5if6Il2myqfr=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "5.7",
+      "view": 1841,
+      "releaseTime": 1756951248664,
+      "latestTimeUpdate": 1756951248664
+    },
+    "86": {
+      "id": "86",
+      "name": "Nam Chính Là Chuyên Gia Giám Định Trà Xanh Xuyên Nhanh",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHcoH7P3FZQ1b-r18ybLX25O0ZQiRzMJNn_3235NAN1Gc20Cg0lq50DAgzPUZ8jkGCwT1-zrmoUqXAHCetCX3MuSJ6HYHpto1cQUCPj39W9jZcvT0teKLx6YN0yOsBXgCr_rgdAAfUnb3lUBgneyX_Rf=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "6.3",
+      "view": 9494,
+      "releaseTime": 1756951250191,
+      "latestTimeUpdate": 1756951250191
+    },
+    "87": {
+      "id": "87",
+      "name": "Ta Có Ba Trúc Mã Là Long Ngạo Thiên",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHfwNsnmAaVTyI8CgC5JIAAPvxEDhqGGs7IfnWE7jbdEBhTY0WZk8S_i42n1o2FxjPG5HQ0O61iMWA9vPVgI1tZ5Kvbx7E1EWkfYD7TqUR_yjOKCp07UZGWV42job8TLVwmH23n2WfeFfM7dVeN9is2e=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "6.3",
+      "view": 5319,
+      "releaseTime": 1756951251284,
+      "latestTimeUpdate": 1756951251284
+    },
+    "88": {
+      "id": "88",
+      "name": "Đệ Nhất Long Tế",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHdKkyO4SUkxwINUvlLWcsOOh10WGXf7yPTbdq2uoIWuW_GinPCrCpfWv78VPV9Pqjykkb2m7ZenDSYtYa88hZusG23MgndAqwQH3F580OHSvplCFIN4nKbEc9Jfb1ZLgBhlCl4ziPbX6iBaGJOsXiHq=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "7.7",
+      "view": 7050,
+      "releaseTime": 1756951252712,
+      "latestTimeUpdate": 1756951252712
+    },
+    "89": {
+      "id": "89",
+      "name": "Tiên Tử Xin Tự Trọng Ta Có Gia Đình",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHeF7QWhp3HgwfEpPa71cIDook1NDbvRWFw6K_q-e3SjGSgVEuZEpanXc_VE4K9kayFLuBAc1GRvkMvIod5ZRLtYHuLKRscxtHI2wiBdLMp90SqX90XrDbSfwjuqCTzdzsZyaX8Tm3GE1hFkJkkxLo-q=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "5.3",
+      "view": 2813,
+      "releaseTime": 1756951254210,
+      "latestTimeUpdate": 1756951254210
+    },
+    "90": {
+      "id": "90",
+      "name": "Nữ Chủ, Phong Thái Của Cô Đâu Rồi?",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHcc6DQwlcchO0RUjmcjQIVCTssmz7dFOnFnjHFf-O4ilGsvA4ZTfDifR_JARToEyHgZNsr-khVrzcjMJcNemZTVvwerpmskIRgwLaBH4NzbCE8e4cDYDU84k9WWA0TGLIORAcqphyYdKS1V8Kl7uYCV=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "7.8",
+      "view": 6190,
+      "releaseTime": 1756951255381,
+      "latestTimeUpdate": 1756951255381
+    },
+    "91": {
+      "id": "91",
+      "name": "Nam Chính Hắc Hóa Suốt Ngày Giả Vờ Đáng Thương",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHfy15dojM8WjHeHMowYABwBtZDp-Rh859bsVfghP64pgxNIj5SRdAu6ML6nc3os6Z41G6ebFB9nrwfj20wM3lA4FyJaLKvjMvXTV-dxthNuEln5UZp3NdVbWmRtvJ_-q5i6wcfLwivXQ8eAnQoIrbiP=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "7.9",
+      "view": 958,
+      "releaseTime": 1756951256521,
+      "latestTimeUpdate": 1756951256521
+    },
+    "92": {
+      "id": "92",
+      "name": "Sư Huynh Của Ta Quá Mạnh",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHem7pm9oSu1J_6EBmcuXtORGYUrHWdBNbfOndQwjPShupBFvSIf_bM55yy7yGlrjhXv28bBXdchFMXPqGuUzzb-z5KWflXjqtl4mOLAH2K6KuBvDbi1CjuY3fVqOy3ydVgKyqabVjIbFA2xTMk4xn3l=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "9.8",
+      "view": 16,
+      "releaseTime": 1756951257820,
+      "latestTimeUpdate": 1756951257820
+    },
+    "93": {
+      "id": "93",
+      "name": "Ta Dùng Đạo Chủng Đúc Trường Sinh",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHfXUkea2Cta7tyPzvvpqNiPyfQhddsPZnqMH0NQPsxvBWE9k2vjFUju7GOBuTAtgbDwa6XEoCghE8hEZ1wGxkgkHfCa1FY8MmPrQFDpRKe_zfEsj3uaFIXpvlXs0utrYcJCFamf_aTUdymEXsiY_8yI=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "9.0",
+      "view": 8965,
+      "releaseTime": 1756951258706,
+      "latestTimeUpdate": 1756951258706
+    },
+    "94": {
+      "id": "94",
+      "name": "Nhất Niệm Cửu Thiên",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHemK9hoH17m0r7_w3vDwH0FFxsLzNzqhiAlOX-HXNfoWN62ldfO-70yvywr8TQCqe6XlS5VDw-yVPms-i-vICinQ-ES2Mih4cUivTYlBbx7fIXP93kTkADL9ZgsJ8la5dhPJ_u7fgoi5-SxoMk23ipB=w215-h322-s-no-gm?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "6.4",
+      "view": 9750,
+      "releaseTime": 1756951259591,
+      "latestTimeUpdate": 1756951259591
+    },
+    "95": {
+      "id": "95",
+      "name": "Tiểu Thao Thiết",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHck07inDwwl3sBDu_iBm4NcgrkRGjX83ahEPakEcWINwSkmkmbb_fkW5Q4av-OYMJZXA-6oApfDPqZtetA-fOpqn5kHVfBnDR_1ubM-FD7biE7CeSLayOHWKMQneGvD956HF7y6gO4DX_JsGZx2h53z=w215-h322-s-no?authuser=3",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "8.9",
+      "view": 132,
+      "releaseTime": 1756951261053,
+      "latestTimeUpdate": 1756951261053
+    },
+    "96": {
+      "id": "96",
+      "name": "Thần Ẩn",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHfDJOnzV0uDWgYTEqR2asBpC9uvilomUGdIzyRDjE2Gka0NRj-fHPITtFAeROYBoTQ9XK6ckc_2hXfSorh8z4xBMlwWLTsLJDlMK1EU3Ehc04PUCUj2VYJTOgnWcioBAz7AtikPqXwDOZ0F7ONHU4dR=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "8.2",
+      "view": 5407,
+      "releaseTime": 1756951262522,
+      "latestTimeUpdate": 1756951262522
+    },
+    "97": {
+      "id": "97",
+      "name": "Vô Tình Vấp Ngã Lịch Kiếp Cũng Không Yên!",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHd9ki-LDj1yS4loIuhlm9mGTQIgDrfRvsx3FHgcSwdVSlv6iSDEQIgErGZ_h7h6XmbXJQxPAxwp6jV9QJO48fp8XjSltaFIzz8fy6Zo_hRD5bUDfs6bSrg1rZHRAK_hbG7yHK5O20O9CzFDi62dBCrn=w215-h322-s-no?authuser=3",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "8.5",
+      "view": 8330,
+      "releaseTime": 1756951264834,
+      "latestTimeUpdate": 1756951264834
+    },
+    "98": {
+      "id": "98",
+      "name": "Xuyên Nhanh: Quyến Rũ",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHfiMQ8b0032vp0-AOisjWoLL-tnFlWin8q6qHinqqXAs_dG9-Gifhfvf9Le8vO-NAGxne6FN3-4rtFn9M7YSyHo3jNI8Uk-Mg8IlZ8qOtum2Q7wJhmQ0wNSwpY_hSIlp98jFmG8W0CU4i8emhNus4El=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "6.4",
+      "view": 7349,
+      "releaseTime": 1756951265764,
+      "latestTimeUpdate": 1756951265764
+    },
+    "99": {
+      "id": "99",
+      "name": "Mộc Tiên Truyện",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHfWXQ8Ew055MzGOyK37boBQPt6_m1xkMwkrsH-ar7WPWK3yeqV_vF6as1MLmp7ZYyc9dapWA6F3X-CnXTmH9ZXMFoFUhqA1fAS2QDtV8BG2UW6mxHuhPDPURs7yAAG49b8TgO9rORHBGmbZii8TpgOl=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "9.8",
+      "view": 5443,
+      "releaseTime": 1756951267320,
+      "latestTimeUpdate": 1756951267320
+    },
+    "100": {
+      "id": "100",
+      "name": "Ta Vô Địch Từ Phá Của Bắt Đầu",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHdgXyJ0P8p-dzsVWRFp8GitS7joYLRpSkokFI68keCalVu1yRclV2tE8N829tfG2u0pZbCCjRwdJbplcD-Nfm4z0foSF09mXwYxmuwwjEj_R8jwCyzRBA9gY0ZtlPjlCyOBeNJF0th0NfcmMg_12tIq=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "5"
+      ],
+      "rating": "5.0",
+      "view": 4690,
+      "releaseTime": 1756951268531,
+      "latestTimeUpdate": 1756951268531
+    },
+    "101": {
+      "id": "101",
+      "name": "Hồn Đế Võ Thần",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHc1tI-b1GZRVq8ppalHZTyhjMy5qevsYElp6ERsBYhfVkK7QJ4arPcgZXao-6vqUizVF378fTRke49I0v_JUDHJZRKE3119N4QcBtyOJyGp0FE8jnmb-eP6QiFsgqoBSSxjQKi9O_ZE2nAMERJ0f9US=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "10.0",
+      "view": 103,
+      "releaseTime": 1756951270203,
+      "latestTimeUpdate": 1756951270203
+    },
+    "102": {
+      "id": "102",
+      "name": "Chưởng Môn Sư Thúc Không Thể Nào Là Phàm Nhân",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHc0ysZFcKHuhfJjVi08i59QssK2MeMTfuZcBQvldtlpT-71fxLHDL_AeuQvCIB5rU-ZYKRiwE6WVnG4v-0Z1aEUa2HneMyQb9VBtlySwh8g54FWVGhxrZuxoHGTTSJ1Er2R4RUwL0upnFT1gmc89Lyz=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "9.8",
+      "view": 3558,
+      "releaseTime": 1756951270727,
+      "latestTimeUpdate": 1756951270727
+    },
+    "103": {
+      "id": "103",
+      "name": "Ẩn Cư Ba Năm, Ra Ngục Thành Vô Địch",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHcGvmgxZrtsZIKduCHVP6Vz1GdOyTY7wmF38MSQrMDNmeOO6BRxpv_5Zt3TpN4CV3p7gmJw5I0cDnyjhpKQDOUpTafq1khgDFyTz6ADSuczmVRaosq1fVd4hQdRWsQZGJ6myxa3irOgyQJKtcj0MRq2=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "9.3",
+      "view": 8341,
+      "releaseTime": 1756951272046,
+      "latestTimeUpdate": 1756951272046
+    },
+    "104": {
+      "id": "104",
+      "name": "Tiên Tử Xin Giúp Ta Trường Sinh",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHdijaxF2MFpcegieqL_6jrgyU6fZg8OCAvSzZkDXEAX_2ysBOY0oze9dVw6P3jPMECw5rJG6l77FnE4OfnStHLF8pl-7DIxzJ1nbonqqKogoSJTnUALngFg9LkXLkXpyqrVMKZHxmzilTc-mFIF_xg2=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "5.5",
+      "view": 2483,
+      "releaseTime": 1756951273546,
+      "latestTimeUpdate": 1756951273546
+    },
+    "105": {
+      "id": "105",
+      "name": "Xuyên Sách Sau Khi Hoán Đổi Thân Thể Với Ma Tôn",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHf_z3Co8Fm1uIf3w2gDJ5CIQIlcBzjuQnUaYroelQ3Sgx0gca48jabMsLKYgvZ4yFDVOIaPV8M5894H86XRV9UgsV18xyg39OjhleId0unHho75ncKfWqde0m7CoCf_qtnBpf1R5CcDXkfCqzw8h2ke=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "9.5",
+      "view": 2430,
+      "releaseTime": 1756951274622,
+      "latestTimeUpdate": 1756951274622
+    },
+    "106": {
+      "id": "106",
+      "name": "Mau Xuyên Nam Thần Nhà Bên Không Bình Thường!",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHcfnEWcYavx9UHzkly3mEpYh9d82mNOzNY6M5UiFrpXKFx1tDawqJfCJ956cN6-QQhJq9dktaetkPt68ux9ALZRfgC5Ee21gg08AMBCI1cm6Jpdsy7E-GQIuuc5_CN4H_xpJy_Z5KSh3xru1r3-ZgPn=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "5.7",
+      "view": 7264,
+      "releaseTime": 1756951275826,
+      "latestTimeUpdate": 1756951275826
+    },
+    "107": {
+      "id": "107",
+      "name": "Quỷ Đạo Tu Tiên Ta Có Thể Miễn Trừ Đại Giới!",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHfohzziCieSMJUOEBHyC3VrafOMwFvR2mJPchJPshEfrn5o-CIpMVz-vq6uBkeg2906UQHR20YqihJLetaYXtHIGhpfzPOCJ5BJF4XFBDY4RkAARP4MRdGl3TVj4MO2g71d6Gpk7cuUeuxpBbtKQcIz=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "7.0",
+      "view": 8484,
+      "releaseTime": 1756951277198,
+      "latestTimeUpdate": 1756951277198
+    },
+    "108": {
+      "id": "108",
+      "name": "Miêu Nghị",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHcmoksPgyQi2o3y9VjquO2XAmA0e2KHUmSGqSyyG0t4eFKZU4zZCpnGQv_P6H0GolvWi0H7KJDQXkMZZrIU4TL9nA3yTzhFJOd-LhCEoWXlMfJ8qtr2qmcyeeR5pFPZ76gEmJD6pJbXO6JCVn76at83=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": null,
+      "view": 5634,
+      "releaseTime": 1756951277990,
+      "latestTimeUpdate": 1756951277990
+    },
+    "109": {
+      "id": "109",
+      "name": "Hệ Thống Điên Cuồng Tăng Cấp",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHclpthz74PK8-hxb4Z2Mjb7TZXypNnnRT46cEyJsJUmf1lcAEkLLDvQ-IDxnpUgm8i7RhLN4wyb5r2ja937Yh_CRdOhVOFg4p9yp98hbWdj4PY2UfypeefdbN5uJFB9dXFjYemTw4rFIIGCBVD2rzMN=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "5.3",
+      "view": 9087,
+      "releaseTime": 1756951279225,
+      "latestTimeUpdate": 1756951279225
+    },
+    "110": {
+      "id": "110",
+      "name": "Ta Mô Phỏng Trường Sinh Lộ",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHflFuZAmec3Q0M0OUv8buxs5o4a57XwOlxb7zgEtVJ3hm9aaQS4mwFrXK7H6NRuGcnPBzBAct8hP633ICYqTcjWwFt7Fj2eoTMG2SPZJiAwJfPMz60Y89Oy3EqdO1yYaurW_3q1LJva3_I_WAAQpek4=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "4.8",
+      "view": 716,
+      "releaseTime": 1756951280378,
+      "latestTimeUpdate": 1756951280378
+    },
+    "111": {
+      "id": "111",
+      "name": "Phàm Trần",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHcYcLQ3gH2wtcQ6XzpsHQKX9OsSytMDgttSFAZf31-wU_Z2bSoHh010V_KK6u5-8TmkFlMRMPZtdLtiAwTkcnBe2Dv2IR_OZPaWUH6vkoJtkxtjq8nIszYGgidEdaWgy_ja64dRe4pJaJhhbkyHhm0n=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "8.5",
+      "view": 945,
+      "releaseTime": 1756951282051,
+      "latestTimeUpdate": 1756951282051
+    },
+    "112": {
+      "id": "112",
+      "name": "Ta Có Thể Thấy Ẩn Tàng Cơ Duyên",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHc1iyskwvri2hIwVjwq7haHTASvwK4-l27xysLrPVX1ADzl6SNb-ZsKbBKAmnFb_HnO2pCl0GZZ7i-GoFLdJPQwbULmRdtowdzoCTATcfCIGo2sev8HlomVUopbuEZrbHBzxl9Dr2QZfaZY7XksBhI1=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "8.0",
+      "view": 271,
+      "releaseTime": 1756951283043,
+      "latestTimeUpdate": 1756951283043
+    },
+    "113": {
+      "id": "113",
+      "name": "Vãn Thiền - Mộ Thâm Viện",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc8IpocdqfyClHhU1dHSjDqJJDPtFTPUWjVs-Oy2HSE82ydsKa9bOwD1uYT5mFJt3LPaO7FphsfHqkxZV3sng5UsyuTeu7fu6ZxUsPvycXOY00T2YkwpldEUC4OjnM1zp-6kvoZo6pW1Pkm5eWN5z7T7=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "7.8",
+      "view": 7949,
+      "releaseTime": 1756951285003,
+      "latestTimeUpdate": 1756951285003
+    },
+    "114": {
+      "id": "114",
+      "name": "Tranh Minh",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc81Wo5pRwEnCmVePmgA9BELcGettf2RVYj9FQzPdFOCsqVpfI8pkCLuHOIznO7B4DnFDwpYfUWzUk5qx_wUwonjYmbpNSRQrTk6tXe7FQ-dHRgrka5SbjKQdbiLmpUnKD26wZ62b9VcHlqcx9FTPah5=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "9.7",
+      "view": 2349,
+      "releaseTime": 1756951286571,
+      "latestTimeUpdate": 1756951286571
+    },
+    "115": {
+      "id": "115",
+      "name": "Vô Cực Ma Đạo",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc-0TrcYJWOXofOVi5kGZJr3D-Zx-I2m6qyfAxAsjOZVBItxWbyDDrkos5kXxAsqQ7XvambH3GAArfj-Q8tZZILHx4m5cR_DTwErnmnNqnKpwzOi5h91P8wlJGGNepuoBOkmzgiFkQ_bWtUvoLmgs7kU=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "8.8",
+      "view": 9677,
+      "releaseTime": 1756951287439,
+      "latestTimeUpdate": 1756951287439
+    },
+    "116": {
+      "id": "116",
+      "name": "Ba Ba Ở Những Giai Đoạn Khác Nhau Đã Trở về",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc9Nx8iFomClrDKSlKgpBptIgLrUv-z2VsEV1b8i-E2BOV38do7PGSMD3FyyTs6pGP2UKdeTKJ6tVDfyaYTeZWOl6gAhfa3t0QIhBc-kcl02Uu1n6Pw9MJPBvjHKVRg9og1LIF9wsC2y7U5J44Z3S314=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "7.8",
+      "view": 8630,
+      "releaseTime": 1756951288418,
+      "latestTimeUpdate": 1756951288418
+    },
+    "117": {
+      "id": "117",
+      "name": "Trường Sinh Bắt Đầu Từ Việc Lấy Vợ Bản Dịch",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc8_EBi_2bnhwUVvptNTo_u3hlWK9Y-jt5MaM0kMkyFN3yFP8rrvtWyCR2IGDr4ctn-5CnvT6qY3l_k1oi7Y6yG9oPG4dv2E98iA_qyKlkKUWTmw2Qg_FVp3iT-8NmVUee7AKcJTMMot8RwQwol1886U=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "10.0",
+      "view": 9054,
+      "releaseTime": 1756951289926,
+      "latestTimeUpdate": 1756951289926
+    },
+    "118": {
+      "id": "118",
+      "name": "Ta Thật Sự Không Yếu Nha",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc9a3RAP6V-0uc5yY6oMy0puo8qk41qVeNzUzdih2vhFSUmV7XowLcs6Fw4joq6PUWp8rJveI9NW8DZ1F1Tp06WQuhroUzLkQCZyzczhOPNVHe8jGczcQIRLbUPA4kX8vXtgZ0nHnLZH2Tcl-isCg9lT=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "10.0",
+      "view": 9229,
+      "releaseTime": 1756951291075,
+      "latestTimeUpdate": 1756951291075
+    },
+    "119": {
+      "id": "119",
+      "name": "Nam Nhân Chỉ Ảnh Hưởng Tốc Độ Rút Kiếm Của Ta",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc9oU1SDieZ2_08wF0AA8mz1ZFY1Xx4eCgtVt1vTWN6Tt7rodpe8BiQOleQSZ3ZEUcL95hGqLFPJa94gkOStJLScabRAbzw7KneHpbQgujbI53HuXpjl1fcwLk2eqkpMdm9T6qS-P1tZn4wtczUYFrhl=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "10.0",
+      "view": 8899,
+      "releaseTime": 1756951292220,
+      "latestTimeUpdate": 1756951292220
+    },
+    "120": {
+      "id": "120",
+      "name": "Pháp Mệnh Thiên Tôn",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc9UcqupKIjjRQ87vQ5Z2IHPoXtSnop4V3RDjk0Y9egdnXFkreBe4eHOqQeTvrfcqd1jG4V-qwijs4d6tQjzvuSOn0TH3sTlZOftbqG2boOPHtIgit_cxC38bpdN3zSU0DdF6h_tcbp6iTn5DYQYrZX5=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "6"
+      ],
+      "rating": "8.0",
+      "view": 7220,
+      "releaseTime": 1756951293117,
+      "latestTimeUpdate": 1756951293117
+    },
+    "121": {
+      "id": "121",
+      "name": "Xuyên Không Nữ Chủ Tu Tiên Chậm Thôi",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc8tRYyE4QnKlkfM8xs5baP5jD6x83lLRER1kzk7AXLsFpqPr2tiMAKZGpAJE72LypdtvfYMgXNPcpsHCzkG0owqDUaxmqJJ3oLdOqpkfLftKKWnD8t2Kfx-XgKbq7xh8ek7jR3OWIjUGPtTy_5uGHqI=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "9.1",
+      "view": 3442,
+      "releaseTime": 1756951294606,
+      "latestTimeUpdate": 1756951294606
+    },
+    "122": {
+      "id": "122",
+      "name": "Thỉnh Công Tử Trảm Yêu",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc-DWGfBXARf9p7M8EpvnbvhKcbMCZxQvJOodbK_ZNcMp2KQ_z_gfS0qDQy6CWMb0FylHzCldb0L5_XUMlt1LpLRoCOMgZICyj2e2jgoVnUllPnG80CRKgH87QT9lGTgyxgfONVQOKuyzQo7eC6nAiE7=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "8.0",
+      "view": 2761,
+      "releaseTime": 1756951295610,
+      "latestTimeUpdate": 1756951295610
+    },
+    "123": {
+      "id": "123",
+      "name": "Cửu Linh",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc9f59seTZnQhHiurOLgiijuFKBOvJBS2H4domcb2aCm0qcdqBL-gvHPqksUCS6bjPkZO5pTAAoyd0k7jFZEwKrG4mp3H9U58sGf56wAKe7DZfU0pWWqj-U3Q5ew3t_hckJszVXL4BQ_jFaYw1ixJTwF=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "10.0",
+      "view": 2620,
+      "releaseTime": 1756951296883,
+      "latestTimeUpdate": 1756951296883
+    },
+    "124": {
+      "id": "124",
+      "name": "Thiên Triều Tiên Quan",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc9-w2fKvRm1DZqou3mEaGi7xZFODYeYOjUNhxFUbQbyHBXAqagof_btDUkowGwzUJv7dSR0ZMnJ1E7U-bvrOa2bHC0wRzUP8S9pIOmYnqMxJPU7keA_tiSxk6W66deI_YKBjzLfOAKlLljOJ4dHI_jz=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "7.0",
+      "view": 876,
+      "releaseTime": 1756951297671,
+      "latestTimeUpdate": 1756951297671
+    },
+    "125": {
+      "id": "125",
+      "name": "Các Sư Đệ Cũng Là Đại Lão Vậy Ta Chỉ Có Thể Bật Hack",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc_M-kDJogRoi0UCMsup5wvsmGOoN4nAAUZ3uDFicOic2muyjkh4KfuGzO5MOrOKS3GS--eGcz1WMks8rePdUkcU1eKLwAPpUVTRnwz2Sjv9sgYsQjvJF7w44pWCHiVYJrDCfzrOjIHa5JnshgJsz29z=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "6.2",
+      "view": 6338,
+      "releaseTime": 1756951299203,
+      "latestTimeUpdate": 1756951299203
+    },
+    "126": {
+      "id": "126",
+      "name": "Hệ Thống Của Nữ Chủ Lại Trói Định Nhầm Vai Ác",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc-3AyVOgiYYbXMkft_SeYX6m6JQkG_NQxDgajWU3v7yctqJxZzTVbxrLYtX1dPv_zKhNuYAImTlKtqueF3s-wfrZgJ2FVG2bjEweQxWg-_oue6_jrPDb8lcbSdfBXdWSiYPhDWNZHdZkkKCTCr9jnoX=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "8.3",
+      "view": 8770,
+      "releaseTime": 1756951300604,
+      "latestTimeUpdate": 1756951300604
+    },
+    "127": {
+      "id": "127",
+      "name": "Đấu Phá Thương Khung Vô Thương Cảnh Giới",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc-JEDtOtW7hshjrV-ZfNkHFK3aaUBl0_pqzZOz3MNa1jSCaxdV4_f-M_3pTweNqhzAmTZmir0ErFrSNDHGWCU4rdrsG8PYCvWYM4Ax_6_LD7Zkvozsm9G6y7K0ZkcsK5Si-vkTy1rlj_5s3RMg4-aAG=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "6.8",
+      "view": 6947,
+      "releaseTime": 1756951301429,
+      "latestTimeUpdate": 1756951301429
+    },
+    "128": {
+      "id": "128",
+      "name": "Thương Vương Phi Ký",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc-y-0GPQrtB8XyJvsEViA6Ys5X_SX1WBmFuYYD2GVErq_GFD8JJ2LS98deMuFLXoskXaMzWjCLAjkM90PRqXIcFV1ePguVj6KR1kI0nab7Jp-K-_Ajin1Adzet0KM5rwS5n0kFStLEnOPuv9SrJE_MH=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "6.7",
+      "view": 8305,
+      "releaseTime": 1756951302720,
+      "latestTimeUpdate": 1756951302720
+    },
+    "129": {
+      "id": "129",
+      "name": "Phù Sinh Nhược Mộng - Tán Tiện Cửu",
+      "image": "https://static.truyenfull.vision/cover/eJzLyTDWz0z3y032z0n28zDLLjYzcsvKico18_HLD6uodC9wN8p3z0pOCsrIDfAwL4kqN_FPjjIp83OJ8vBLcjfws_TyLUwOK6hK9_SuSrJ0zQ90NTXwdrQtNzI01c0wNjICACrkH0g=/phu-sinh-nhuoc-mong-tan-tien-cuu.jpg",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "6.8",
+      "view": 4874,
+      "releaseTime": 1756951305162,
+      "latestTimeUpdate": 1756951305162
+    },
+    "130": {
+      "id": "130",
+      "name": "Cầu Ma - Khúc Tiểu Khúc",
+      "image": "https://lh3.googleusercontent.com/pw/ADCreHcOdrkTcNTRobYC1yC5_e6_1xEcjD6zF05-2wAm0KowwM5fN6akB9kDvFTYx4dq6WiUHS4WDg2CPILyIFQAf1HUpLnnsPaIDOtePEQBLMWgj9kLKcqIPCXcRT9czP0gmpmEeSrxOqLYPaU8ot0hdhqC=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "9.5",
+      "view": 4459,
+      "releaseTime": 1756951306490,
+      "latestTimeUpdate": 1756951306490
+    },
+    "131": {
+      "id": "131",
+      "name": "Chư Thiên Quay Về Cuộc Sống Tu Tiên",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaWpsPhHItjpsOd_r0_Ai6FAa3ZqdQG9QPjpxOmaMRxU-sFwKeB7SAGio8Xypns1SIrvMHD1wZyuouskN3SCYZYfXLVJiP0LfeNOcKzZffrfAxPl3FNYFCaW5yWBakXfpxt0rWpUlWTYPenoUZqEjxVu=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "8.5",
+      "view": 9840,
+      "releaseTime": 1756951307311,
+      "latestTimeUpdate": 1756951307311
+    },
+    "132": {
+      "id": "132",
+      "name": "Thiên Tinh Giới!!! Xuyên Đến Rồi",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaXg2-Zn9QDvSZoj3LuZCz4lRAqZrm90z5xLA7M6Om8kWCTrOhja9NrJ_NqxbG3cV6FKBV0QXrbr24CH5aGlOJ4PEdGTAR92G02d-MrXoY2q4e1lLG-neUlrzyAMiRS6yen9Wx16rC-N1JFoBBr-LnNw=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "7.0",
+      "view": 9583,
+      "releaseTime": 1756951308475,
+      "latestTimeUpdate": 1756951308475
+    },
+    "133": {
+      "id": "133",
+      "name": "Mọi Người Tu Tiên Ta Làm Ruộng",
+      "image": "https://static.truyenfull.vision/cover/eJzLyTDWNwlOLneKTw_Md3IvDkjNLo-PSMqucvLxKM0sNvKMiAovd8nILPRwMilMck1LD7DwdjZzTSnJzDG3dDN0cS8J9_QttsyNCgjULXLN9c7IMPIw9Mi3LTcyNNXNMDYyAgBRiB-n/moi-nguoi-tu-tien-ta-lam-ruong.jpg",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "5.4",
+      "view": 7639,
+      "releaseTime": 1756951310020,
+      "latestTimeUpdate": 1756951310020
+    },
+    "134": {
+      "id": "134",
+      "name": "Hợp Đạo Thích Lo Chuyện Bao Đồng",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaXhnuKIAfRdpAuF1GM4abdeJIKhkbfgVp19gZA8lJ3xIJaEzmsnJbM4Kzx1ZABxTnRv3O8nBymiTvGLvQ07LzwCbkRO0Uw3nGHprVUXNYV3W470gJqXoQNgznYLMiUd1Ryh_-O2t_LffzXauw1dsnIV=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "10.0",
+      "view": 8996,
+      "releaseTime": 1756951311228,
+      "latestTimeUpdate": 1756951311228
+    },
+    "135": {
+      "id": "135",
+      "name": "Địa Ngục Trần Gian",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaVEoRkgD2CzwvbFRVRHfiasMddP0sGo8O7ZPPsoRmg96knGWtZDvtgsr-p3I-D-YpKU1DFhG9RIAEN6ghHq8CKPrkWmEpblnAjmzxd-VXl0OtqC-DgAINn8JbaUBX4zFQHaLwXhV5CRCnYzikVUMKq7=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "6.0",
+      "view": 5539,
+      "releaseTime": 1756951312668,
+      "latestTimeUpdate": 1756951312668
+    },
+    "136": {
+      "id": "136",
+      "name": "Kỳ Lạ Thế Giới Tu Tiên",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaXfWyAGqUU2YJGccjN7erwDRXyF7IEyA6tMiKTf_TM6qrWcGsOYcqpnd7W9KLza48FJ7N9f0GcQROdnxy8iJffF070oSPxzMHWSjL6onq4lwPgi97B6du6yn4AXOPGstchE_V-WHMdSGPYV76R4snKV=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "7.0",
+      "view": 8163,
+      "releaseTime": 1756951313735,
+      "latestTimeUpdate": 1756951313735
+    },
+    "137": {
+      "id": "137",
+      "name": "Để Ngươi Làm Tộc Trưởng, Ngươi Sản Xuất Hàng Loạt Đại Đế?",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaX8HrnTR_1i03wGk8QegrPKKptNUNjEaOInQEEhjyPUaFGL8hv8zE5zWTnYw-n3sH47n9MAWI31Pj_ApqtqchWzu82NCb3ZaIzKfUznVxBsgHnlAKIgouzxEADuZ13Gdwe7G8sDtH3tjNwRG2UA4zxl=w215-h322-s-no?authuser=3",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "6.0",
+      "view": 3978,
+      "releaseTime": 1756951314688,
+      "latestTimeUpdate": 1756951314688
+    },
+    "138": {
+      "id": "138",
+      "name": "Tui Có Chín Sư Huynh Tiên Phong Đạo Cốt",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaXvaOrFU7R6f7EE1VaP8EpZG86CGLyq2H1qGbcVrnSyGbE-t-c_qrYHgnCo-tF5CrktXR0SidJnVbhVj_MXjvG3qv5TU6ywoLBGysSctXeMJwLLdR12gXHELwkzzQl8HKMfVREVIFyOsaRJvSKV7Exw=w215-h322-s-no?authuser=3",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "8.4",
+      "view": 2337,
+      "releaseTime": 1756951316070,
+      "latestTimeUpdate": 1756951316070
+    },
+    "139": {
+      "id": "139",
+      "name": "Tiểu Tổ Tông Ma Tộc Trở Thành Tiên Môn Đoàn Sủng",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaWzIsHPmSv439rYk-jhwW0TOpxPdJu6RVXNu_xfsNkxxIYc2rvCAVmAp5ai85cm-faZDFq0DhTodLhZZDVU-J2CxujtjagoxBFiNmeofuO1zR3IGU1jGUpIMIWCeRjEkxrL0MPiZDqvFeE6mtpI_ER_=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "6.7",
+      "view": 6436,
+      "releaseTime": 1756951317467,
+      "latestTimeUpdate": 1756951317467
+    },
+    "140": {
+      "id": "140",
+      "name": "Lực Vương Huyền Vũ",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaVcB-vNiaeQgUtP7nOaM5LeRsFZ_shDn4VnZXc7zX9VZVTRhEvupBWqLFddJv0XrhMbZP5jOcLotc8rG8taJgofUSw020k563ExV-6bDDRVBRnV4fT5ZlaEqtBb-LdtyGDyAK3PWHS8nR0IEyEVKRB9=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "7"
+      ],
+      "rating": "10.0",
+      "view": 3790,
+      "releaseTime": 1756951318874,
+      "latestTimeUpdate": 1756951318874
+    },
+    "141": {
+      "id": "141",
+      "name": "Ta Là Con Rối Vô Địch",
+      "image": "https://lh3.googleusercontent.com/pw/AJFCJaUGi99Cs0UIw6kCh61Vay3CL_wuV_OlIafOlZK_31vhJj1-UIfmbzcXiJ-m6xkpVbyRtNn2mB7KirQFnKu_qpcX0ewej6_lT7o409GZNn-br_-RSAYsv2SDbYgL1GfIC-jLNoQ831-qO-Uqy53-lM-y=w215-h322-s-no?authuser=1",
+      "type": "novel",
+      "genre": [
+        "8"
+      ],
+      "rating": "10.0",
+      "view": 7173,
+      "releaseTime": 1756951320077,
+      "latestTimeUpdate": 1756951320077
+    },
+    "142": {
+      "id": "142",
+      "name": "Thần Khúc",
+      "image": "https://lh3.googleusercontent.com/pw/AIL4fc-DojAeN_5vRAylBccDSgnQNFpbpaFW1TqRn708m1Iwjv5bLdiAEHv01OCNd4-3J1XumkYIL_5s2Y49iJjcklAYARuoFrfoMxw68IRTQdcfYjeI_EamRP1B0LjXqbG9tTd2WJevCd_LIEFHedxlaYCC=w215-h322-s-no?authuser=0",
+      "type": "novel",
+      "genre": [
+        "8"
+      ],
+      "rating": "9.5",
+      "view": 4681,
+      "releaseTime": 1756951321392,
+      "latestTimeUpdate": 1756951321392
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.KatalisReading" parent="@android:style/Theme.Material.Light.NoActionBar">
+    </style>
+
+    <style name="Theme.KatalisReading.Splash" parent="Theme.SplashScreen">
+<!--     Mau nen cho splash-->
+        <item name="windowSplashScreenBackground">@color/primary</item>
+<!--        Icon-->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/book</item>
+        <item name="postSplashScreenTheme">@android:style/Theme.Material.Light.NoActionBar</item>
+    </style>
+</resources>
